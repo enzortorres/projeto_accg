@@ -23,7 +23,7 @@ O objetivo principal é criar uma ferramenta digital que conecte animais abandon
 </ul>
 
 
-🚀 Tecnologias utilizadas
+<h2>🚀 Tecnologias utilizadas</h2>
 
 <ul>
     <li>Django — Framework web principal</li>
