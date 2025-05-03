@@ -1,40 +1,35 @@
-<h1>🐾 Projeto ONG AdoPet</h1>
+<h1>🐾 Projeto ONG Associação Casa do Cão e Gato</h1>
 
 Este projeto é um site desenvolvido para uma ONG dedicada à adoção responsável de cães e gatos. A plataforma visa facilitar o processo de adoção, divulgar os animais disponíveis e promover o bem-estar animal por meio de uma interface simples, intuitiva e acessível.
 
 <h2>🎯 Objetivo</h2>
 O objetivo principal é criar uma ferramenta digital que conecte animais abandonados a pessoas dispostas a adotá-los com responsabilidade, promovendo um ambiente digital que seja:
 
-```
-Responsivo
-
-Acessível
-
-Fácil de usar por qualquer pessoa
-```
+<ul>
+    <li>Responsivo</li>
+    <li>Acessível</li>
+    <li>Fácil de usar por qualquer pessoa</li>
+</ul>
 
 <h2>⚙️ Funcionalidades</h2>
 
-```
-📋 Lista de animais disponíveis para adoção com informações como nome, idade, raça e descrição.
-
-🔍 Filtro de busca para facilitar a navegação entre os pets.
-
-🐶 Página individual de cada animal, com mais detalhes e fotos.
-
-📩 Formulário de contato/adote agora, que permite ao usuário demonstrar interesse na adoção.
-
-🏠 Página sobre a ONG, com missão, visão e valores.
-
-📱 Design responsivo, adaptado para celulares, tablets e desktops.
-```
+<ul>
+    <li>📋 Lista de animais disponíveis para adoção com informações como nome, idade, raça e descrição.</li>
+    <li>🔍 Filtro de busca para facilitar a navegação entre os pets.</li>
+    <li>🐶 Página individual de cada animal, com mais detalhes e fotos.</li>
+    <li>📩 Formulário de contato/adote agora, que permite ao usuário demonstrar interesse na adoção.</li>
+    <li>🏠 Página sobre a ONG, com missão, visão e valores.</li>
+    <li>📱 Design responsivo, adaptado para celulares, tablets e desktops.</li>
+</ul>
 
 
 🚀 Tecnologias utilizadas
-```
-○ Django — Framework web principal
-○ Pillow — Para manipulação de imagens (ex: fotos dos contatos)
-```
+
+<ul>
+    <li>Django — Framework web principal</li>
+    <li>Pillow — Para manipulação de imagens (ex: fotos dos contatos)</li>
+</ul>
+
 
 <h2>
     ⚙️ Como rodar o projeto
