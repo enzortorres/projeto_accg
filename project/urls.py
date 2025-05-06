@@ -9,5 +9,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 ]
 
-if settings.DEBUG:
+# ! Para possibilitar adicionar várias fotos por animal, se fosse uma foto por animal, não seria necessário
+if settings.DEBUG: # Isso somente se estiver em servidor de desenvolvimento (DEBUG = True)
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
