@@ -10,7 +10,7 @@
 footer {
     background-color: var(--bg-primary-color);
     width: 100%;
-    height: 337px;
+    height: 300px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -26,10 +26,51 @@ footer {
     align-items: center;
     justify-content: space-around;
     color: var(--font-primary-color);
-    outline: 1px solid black;
 }
 
 .dados-banco{
-    outline: 1px solid red;
     width: fit-content;
+}
+
+@media(max-width:1150px){
+    .container_interno_footer{
+        width: 100%;
+    }
+}
+
+@media(max-width:950px){
+    .container_interno_footer{
+        font-size: 0.8rem;
+    }
+    .qr_code img{
+       width: 120px;
+       height: 120px;
+    }
+}
+
+@media(max-width:750px){
+    .container_interno_footer{
+        font-size: 0.7rem;
+    }
+    .qr_code img{
+       width: 110px;
+       height: 110px;
+    }
+}
+
+@media(max-width:650px){
+
+
+    .container_interno_footer{
+        flex-direction: column;
+        gap: 20px;
+        font-size: 1rem;
+        line-height: 1.2rem;
+        margin: 20px 0;
+        text-align: center;
+    }
+
+    footer{
+        height: fit-content;
+    }
 }
