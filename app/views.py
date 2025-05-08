@@ -6,3 +6,6 @@ def index(request):
 
 def adotar(request):
     return render(request, 'adotar.html')
+
+def apadrinhamento(request):
+    return render(request, 'apadrinhamento.html')

@@ -29,4 +29,5 @@ header {
     align-items: center;
     justify-content: space-between;
     outline: 1px solid red;
+    padding-left: 50px;
 }
