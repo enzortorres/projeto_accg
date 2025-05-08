@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 * {
     margin: 0;
@@ -10,10 +10,67 @@
 footer {
     background-color: var(--bg-primary-color);
     width: 100%;
-    height: 337px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container_interno_footer{
+    width: 90%;
+    font-family: "Inter", sans-serif;
+    font-weight:300;
+    line-height: 1.5rem;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: var(--font-primary-color);
 }
 
 .dados-banco{
-    outline: 1px solid red;
     width: fit-content;
+}
+
+@media(max-width:1150px){
+    .container_interno_footer{
+        width: 100%;
+    }
+}
+
+@media(max-width:950px){
+    .container_interno_footer{
+        font-size: 0.8rem;
+    }
+    .qr_code img{
+       width: 120px;
+       height: 120px;
+    }
+}
+
+@media(max-width:750px){
+    .container_interno_footer{
+        font-size: 0.7rem;
+    }
+    .qr_code img{
+       width: 110px;
+       height: 110px;
+    }
+}
+
+@media(max-width:650px){
+
+
+    .container_interno_footer{
+        flex-direction: column;
+        gap: 20px;
+        font-size: 1rem;
+        line-height: 1.2rem;
+        margin: 20px 0;
+        text-align: center;
+    }
+
+    footer{
+        height: fit-content;
+    }
 }
