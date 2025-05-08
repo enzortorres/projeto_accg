@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=M+PLUS+Rounded+1c&family=Varela+Round&display=swap');
 
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    font-family: "M PLUS Rounded 1c", sans-serif;
+}
+
 .icon-pata {
     width: 30px;
     height: auto;
@@ -21,7 +29,7 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.3);
     z-index: 1;
 }
 
@@ -46,13 +54,12 @@
     flex-direction: column;
     gap: 20px;
     max-width: 800px;
-    margin: 40px auto;
+    margin: 40px auto 150px auto;
     padding: 0 20px;
     line-height: 1.7;
     font-size: 1.1rem;
     text-align: center;
-    font-weight: 600;
-    font-family: "M PLUS Rounded 1c", sans-serif;
+    font-weight: 500;
 }
 
 .content h2 {
@@ -60,6 +67,10 @@
     margin-top: 30px;
     font-size: 1.8rem;
     padding-bottom: 20px;
+    font-weight: bolder;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .content a {
