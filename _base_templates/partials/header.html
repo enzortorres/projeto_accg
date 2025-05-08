@@ -1,9 +1,16 @@
+{% load static %}
 <header>
-    <nav>
-        <ol>
-            <li>Home</li>
-            <li>Blog</li>
-            <li>Teste</li>
-        </ol>
-    </nav>
+    <div class="left-side">
+        <div class="logos">
+            <img src="{% static "global/src/icons/logo1.png" %}" alt="Logo 1">
+            <img src="{% static "global/src/icons/logo2.png" %}" alt="Logo 2">
+        </div>
+        <nav class="links">
+            <ol class="links-ancoras">
+                <li>Home</li>
+                <li>Blog</li>
+                <li>Teste</li>
+            </ol>
+        </nav>
+    </div>
 </header>
