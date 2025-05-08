@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=M+PLUS+Rounded+1c&family=Varela+Round&display=swap');
 
+.icon-pata {
+    width: 30px;
+    height: auto;
+    vertical-align: middle;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
 .header {
     background: url('/static/global/src/images/apadrinhar.png') center/cover no-repeat;
     height: 350px;
