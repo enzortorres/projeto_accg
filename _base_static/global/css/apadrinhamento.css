@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=M+PLUS+Rounded+1c&family=Varela+Round&display=swap');
+
+.header {
+    background: url('/static/global/src/images/apadrinhar.png') center/cover no-repeat;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    color: white;
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.header-text {
+    position: relative;
+    z-index: 2;
+    padding-left: 120px;
+    max-width: 600px;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.header p {
+    font-size: 1.2rem;
+}
+
+.content {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+    line-height: 1.7;
+    font-size: 1.1rem;
+    text-align: center;
+    font-weight: 600;
+    font-family: "M PLUS Rounded 1c", sans-serif;
+}
+
+.content h2 {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 1.8rem;
+    padding-bottom: 20px;
+}
+
+.content a {
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.content a:hover {
+    text-decoration: underline;
+}
