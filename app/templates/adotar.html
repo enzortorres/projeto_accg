@@ -1,6 +1,36 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block css_extras %}
+    <link rel="stylesheet" href="{% static 'global/css/adotar.css' %}">
+{% endblock css_extras %}
+
 {% block content %}
-    <!-- COLOCAR O CONTEUDO AQUI -->
+  <!--  <div class="header">
+        <div class="header-content">
+            <div class="spacer"></div>
+            <div class="header-text">
+                <h1>Formulário de Adoção</h1>
+                <p>Quer adotar um novo amigo?</p>
+            </div>
+        </div>
+    </div>-->
+    <div class="conteudo">
+        <h2>Formulário de adoção</h2>
+        <p>Preecha o formulário e ajude a transformar vidas!</p>
+        <a href="https://www.exemplo.com">Formulário para a adoção de cães</a>
+        <a href="https://www.exemplo.com">Formulário para a adoção de gatos</a>
+        <p>Dê a eles uma segunda chance e ganhe um companheiro cheio de amor!</p>
+    </div>
+   <div class="banner2">
+        <div class="banner2-image">
+            <img src="sua-imagem.jpg" alt="Imagem do Banner">
+        </div>
+        <div class="banner2-text">
+            <h1>Ta faltando alguém na família?</h1>
+            <p>Veja quem pode ser seu novo membro da família...</p>
+            <button class="main-btn">Clique Aqui</button> <!-- Botão principal -->
+        </div>
+    </div>
+
 {% endblock content %}
