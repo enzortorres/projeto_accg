@@ -1,16 +1,11 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block css_extras %}
+    <link rel="stylesheet" href="{% static 'global/css/apadrinhamento.css' %}">
+{% endblock css_extras %}
+
 {% block content %}
-    <div class="header">
-        <div class="header-content">
-            <div class="spacer"></div>
-            <div class="header-text">
-                <h1>Apadrinhar</h1>
-                <p>Com um gesto simples, você transforma vidas.</p>
-            </div>
-        </div>
-    </div>
     <div class="content">
         <h2><img src="{% static 'global/src/icons/pata.png' %}" alt="Pata" class="icon-pata">Apadrinhamento</h2>
         <p>

@@ -1,6 +1,21 @@
-{% include "partials/head.html" %}
+<!DOCTYPE html>
+<html lang="pt-br">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'global/css/global.css' %}">
+    <link rel="stylesheet" href="{% static 'global/css/partials/header.css' %}">
+    <link rel="stylesheet" href="{% static 'global/css/partials/banner.css' %}">
+    <link rel="stylesheet" href="{% static 'global/css/partials/footer.css' %}">
+    {% block css_extras %}{% endblock css_extras %}
+    <title>ACCG</title>
+</head>
+
 <body>
     {% include "partials/header.html" %}
+    {% include "partials/banner.html" %}
 
     {% block content %}{% endblock content %}
 

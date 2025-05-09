@@ -1,0 +1,42 @@
+:root {
+    --bg-primary-color: #7291CA;
+    --bg-header-color: #4D6FAD;
+    --bg-banner-button-color: #F0AC03;
+    --font-primary-color: #FAFAFA;
+}
+
+.banner {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 400px;
+    background-size: 100% 100%;
+    padding: 50px 72px 0px 72px;
+}
+
+.banner-content {
+    display: flex;
+    flex-direction: column;
+    color: var(--font-primary-color);
+    gap: 20px;
+}
+
+.banner-text {
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.banner-title {
+    font-size: 32px;
+}
+
+.banner-button {
+    background-color: var(--bg-banner-button-color);
+    color: var(--font-primary-color);
+    border: 0;
+    border-radius: 120px;
+    width: 150px;
+    height: 40px;
+}

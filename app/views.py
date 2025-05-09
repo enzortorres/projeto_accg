@@ -2,10 +2,38 @@ from django.shortcuts import render
 
 # Create your views here.
 def index(request):
-    return render(request, 'index.html')
+    context = {
+        'banner_title': 'A adoção muda duas vidas: a deles e a sua.',
+        'banner_subtitle': 'Um novo começo para ambos',
+        'banner_imagem': 'global/src/images/banner-home.png',
+        'banner_button_text': 'Adotar',
+    }
+    
+    return render(request, 'index.html', context=context)
 
 def adotar(request):
-    return render(request, 'adotar.html')
+    context = {
+        'banner_title': 'Formulário de Adoção.',
+        'banner_subtitle': 'Quer adotar um novo amigo?',
+        'banner_imagem': 'global/src/images/banner-adotar.png',
+    }
+    
+    return render(request, 'adotar.html', context=context)
+
+def doacao(request):
+    context = {
+        'banner_title': 'Doações',
+        'banner_subtitle': 'Com um gesto simples, você transforma vidas.',
+        'banner_imagem': 'global/src/images/banner-doar.png',
+    }
+    
+    return render(request, 'doacao.html', context=context)
 
 def apadrinhamento(request):
-    return render(request, 'apadrinhamento.html')
+    context = {
+        'banner_title': 'Apadrinhar',
+        'banner_subtitle': 'Com um gesto simples, você transforma vidas.',
+        'banner_imagem': 'global/src/images/banner-apadrinhar.png',
+    }
+    
+    return render(request, 'apadrinhamento.html', context=context)
