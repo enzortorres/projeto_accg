@@ -1,5 +1,27 @@
 {% extends "base.html" %}
+{% load static %}
+{% block css_extras %}
+    <link rel="stylesheet" href="{% static 'global/css/home.css' %}">
+{% endblock css_extras %}
 
 {% block content %}
-    {% comment %} Conteúdo {% endcomment %}
+    <section class="section_inicio_home">
+        <div class="container_informacoes">
+            <div class="elementos_informacoes accg">
+                <img src="{% static 'global/src/images/image_ACCG.png' %}">
+                <h1>ACCG</h1>
+                <p>Quem somos nós</p>
+            </div>
+            <div class="elementos_informacoes animais">
+                <img src="{% static 'global/src/images/animais_section.png' %}">
+                <h1>ANIMAIS</h1>
+                <p>Cães e gatos</p>
+            </div>
+            <div class="elementos_informacoes adotar">
+                <img src="{% static 'global/src/images/pet_section.png' %}">
+                <h1>QUERO ADOTAR</h1>
+                <p>Escolha o seu pet</p>
+            </div>
+        </div>
+    </section>    
 {% endblock content %}
