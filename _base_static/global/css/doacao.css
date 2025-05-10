@@ -1,0 +1,87 @@
+
+
+.main {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 50px 0px 50px 140px;
+    gap: 70px;
+}
+
+@media (max-width:890px) {
+    .main {
+        justify-content: center;
+        padding: 50px 0px;
+    }
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    font-weight: 900;
+    gap: 10px;
+}
+
+.icon-pata {
+    width: 32px;
+    height: 32px;
+}
+
+.doacao {
+    display: flex;
+    flex-flow: column wrap;
+    gap: 30px;
+}
+
+.content {
+    display: flex;
+    flex-flow: column wrap;
+    padding-left: 20px;
+    gap: 20px;
+}
+
+.content p {
+    max-width: 400px;
+}
+
+.doacao:last-of-type .content p {
+    max-width: 630px;
+}
+
+.dinheiro {
+    display: flex;
+    height: 350px;
+    gap: 50px;
+}
+
+.qrcode-picpay {
+    height: 100%;
+    width: 250px;
+}
+
+.linha {
+    height: 100%;
+    width: 2px;
+    background-color: #000;
+}
+
+.dados-bancos {
+    display: flex;
+    flex-flow: column wrap;
+    gap: 20px;
+}
+
+.dados-bancos h3 {
+    font-weight: 600;
+}
+
+.dados-bancos p {
+    font-weight: 500;
+}
+
+.lista-produtos {
+    margin-left: 20px;
+}
+
+.lista-produtos li {
+    list-style: disc;
+}

@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css_extras %}
+    <link rel="stylesheet" href="{% static 'global/css/doacao.css' %}">
+{% endblock css_extras %}
+
+{% block content %}
+    <div class="main">
+        <div class="doacao">
+            <h1 class="title"><img src="{% static 'global/src/icons/pata.png' %}" class="icon-pata">Doação em Dinheiro</h1>
+            
+            <div class="content">
+                <p>Para fazer um pagamento pix por meio do PicPay, basta abrir o seu aplicativo e escanear o QR Code abaixo:</p>
+                
+                <div class="dinheiro">
+                    <img src="{% static 'global/src/images/qrcode-picpay.png' %}" class="qrcode-picpay">
+
+                    <div class="linha"></div>
+
+                    <div class="dados-bancos">
+                        <h3>Para fazer uma transferência bancária:</h3>
+                        <div class="pagseguro">
+                            <h3>Associação Casa do Cão e Gato</h3>
+                            <p>Banco: PagSeguro Internet S.A.</p>
+                            <p>Ag: 0001</p>
+                            <p>C/c: 09434825-7</p>
+                            <p>CNPJ: 019566410001-87</p>
+                        </div>
+
+                        <div class="banco-do-brasil">
+                            <h3>Associação Casa do Cão e Gato</h3>
+                            <p>Banco: Banco do Brasil</p>
+                            <p>Ag: 2865-7</p>
+                            <p>C/c: 408283-4</p>
+                            <p>CNPJ: 019566410001-87</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+
+        <div class="doacao">
+            <h1 class="title"><img src="{% static 'global/src/icons/pata.png' %}" class="icon-pata">Doação em Produtos</h1>
+            <div class="content">
+                <p>Abaixo está uma lista dos produtos que são mais necessários à Casa do Cão e Gato:</p>
+
+                <ul class="lista-produtos">
+                    <li>Antibióticos (cefalexina, doxicilina, enrofloxacina, amoxicilina)</li>
+                    <li>Antipulgas para animais e ambiente</li>
+                    <li>Caixa de luva de procedimento (M e G)</li>
+                    <li>Capstar</li>
+                    <li>Cloro</li>
+                    <li>Desinfetante veterinário</li>
+                    <li>Gaze</li>
+                    <li>Hipoclorito</li>
+                    <li>Itraconazol de todas as dosagens</li>
+                    <li>Jornal</li>
+                    <li>Ração A/D da Roayl Canin e Recovery da Hills</li>
+                    <li>Ração para gatos renais</li>
+                    <li>Ração super premium para cadelas amamentando</li>
+                    <li>Ração super premium para gatos felv+</li>
+                    <li>Sabão em pó</li>
+                    <li>Seringas (1ml e 3ml)</li>
+                    <li>Spray prata</li>
+                    <li>Unguento veterinário</li>
+                    <li>Vermífugos</li>
+                </ul>
+    
+                <p>Recebemos nossas doações em diversos pontos de coleta como Hachiko Icaraí, Hachiko Ingá, Nova Kennel Icaraí e Maxi Pet no Plaza Shopping.</p>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
