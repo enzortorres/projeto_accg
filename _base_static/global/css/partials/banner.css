@@ -14,6 +14,10 @@
     padding: 50px 72px 0px 72px;
 }
 
+img{
+    max-inline-size: 100%;
+}
+
 .banner-content {
     display: flex;
     flex-direction: column;
