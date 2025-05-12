@@ -15,6 +15,11 @@ close.addEventListener("click", () => {
     menu.style.right = '-300px';
 });
 
+overlay.addEventListener("click", () => {
+    overlay.style.display = 'none';
+    menu.style.right = '-300px';
+});
+
 function ajustarMenu() {
     if (window.innerWidth > 1000) {
         menu.style.right = '0px';
@@ -25,4 +30,4 @@ function ajustarMenu() {
 
 ajustarMenu();
 
-window.addEventListener('resize', ajustarMenu);
+// window.addEventListener('resize', ajustarMenu);
