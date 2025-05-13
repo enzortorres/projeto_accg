@@ -1,7 +1,7 @@
 //! Menu Responsivo
 const link_menu = document.querySelector('.toggle');
 const overlay = document.querySelector('.overlay')
-const close = document.querySelector(".close-menu");
+const close_menu = document.querySelector(".close-menu");
 const menu = document.querySelector(".links");
 var menuIsOpen = false;
 
@@ -10,7 +10,7 @@ link_menu.addEventListener('click', () => {
     menu.style.right = '0px';
 });
 
-close.addEventListener("click", () => {
+close_menu.addEventListener("click", () => {
     overlay.style.display = 'none';
     menu.style.right = '-300px';
 });
@@ -29,5 +29,12 @@ function ajustarMenu() {
 }
 
 ajustarMenu();
+
+window.addEventListener('resize', () => {
+    if (window.innerWidth > 1000) {
+        ajustarMenu();
+        overlay.style.display = 'none';
+    }
+})
 
 // window.addEventListener('resize', ajustarMenu);

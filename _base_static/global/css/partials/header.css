@@ -51,7 +51,7 @@ header {
 .links-ancoras li a {
     color: var(--font-primary-color);
     text-decoration: none;
-    font-size: 16px;
+    font-size: 20px;
 }
 
 .osso-burst {
@@ -98,8 +98,8 @@ header {
     position: absolute;
     width: 20px;
     height: 20px;
-    background: url("../src/icons/close.png");
-    background-size: contain;
+    background: url("../../src/icons/close.png");
+    background-size: cover;
     cursor: pointer;
     top: 10px;
     right: 10px;
@@ -108,7 +108,7 @@ header {
 @media (max-width: 1000px) {
     .links {
         display: flex;
-        position: absolute;
+        position: fixed;
         justify-content: start;
         background-color: #FAFAFA;
         width: 300px;
@@ -116,7 +116,7 @@ header {
         top: 0px;
         right: 0px;
         z-index: 1000;
-    }
+    }   
 
 
     .close-menu {
@@ -139,8 +139,15 @@ header {
     }
 
     .links-ancoras li {
-        padding: 20px 20px;
+        display: flex;
+        align-items: center;
         border-bottom: 1px solid #ccc;
+    }
+
+    .links-ancoras li a {
+        height: 100%;
+        width: 100%;
+        padding: 20px 20px;
     }
     
     .links-ancoras.active{

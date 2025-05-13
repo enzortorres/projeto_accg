@@ -6,47 +6,8 @@
     box-sizing: border-box;
     list-style: none;
     font-family: "M PLUS Rounded 1c", sans-serif;
-   
-}
-/* {
-    display: flex;
-    align-items: center;
-    position: relative;
-    z-index: 2;
-    width: 100%;
 }
 
-.header {
-    background: url('/static/global/src/images/apadrinhar.png') center/cover no-repeat;
-    height: 350px;
-    display: flex;
-    align-items: center;
-    position: relative;
-    color: white;
-}
-
-.header::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.3);
-    z-index: 1;
-}
-
-.header-text {
-    position: relative;
-    z-index: 2;
-    max-width: 600px;
-}
-
-.header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-}
-
-.header p {
-    font-size: 1.2rem;
-}*/
 
 .conteudo {
     display: flex;
@@ -179,7 +140,7 @@
         text-align: center;
     }
 
-   .banner2 {
+    .banner2 {
         flex-direction: column;
         height: auto;
     }

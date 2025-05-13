@@ -10,7 +10,8 @@
     align-items: center;
     width: 100%;
     height: 400px;
-    background-size: 100% 100%;
+    background-size: cover;
+    background-position: center;
     padding: 50px 72px 0px 72px;
 }
 
