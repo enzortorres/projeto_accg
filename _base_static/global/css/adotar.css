@@ -1,13 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=M+PLUS+Rounded+1c&family=Varela+Round&display=swap');
 
-*{
+:root {
+    --bg-primary-color: #7291CA;
+    --bg-header-color: #4D6FAD;
+    --bg-banner-button-color: #F0AC03;
+    --bg-banner-button-hover-color: #dfa615;
+    --font-primary-color: #FAFAFA;
+}
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     list-style: none;
     font-family: "M PLUS Rounded 1c", sans-serif;
 }
-
 
 .conteudo {
     display: flex;
@@ -65,40 +72,50 @@
 .banner2 {
     display: flex;
     width: 100%;
-    height: 400px; 
+    height: 500px; 
 }
 
-.banner2-image {
-    flex: 1;
-    background-color: #f0f0f0; 
+.container-left {
+    width: 50%;
+    height: 100%;
+}
+
+.container-right {
+    width: 50%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #BAC9E3; 
 }
 
-.banner2-image img {
+.banner2-image {
     width: 100%;
     height: 100%;
-    object-fit: cover; 
+    background: url("../../global/src/images/banner2-adotar.png");
+    background-size: cover;
+    background-position: center 0px;
+}
+
+.container-button {
+    display: flex;
+    justify-content: end;
 }
 
 .banner2-text {
-    flex: 1;
-    background-color: #BAC9E3; 
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: flex-start; 
+    gap: 20px;
+    max-width: 500px;
     color: white;
     text-align: left; 
     padding: 20px 40px 20px 30px; 
 }
 
-
 .banner2-text h1 {
-    font-size: 2em;
+    font-size: 40px;
     margin-left: 0px;
-
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.250);
 }
 
 .banner2-text p {
@@ -108,17 +125,20 @@
 }
 
 .main-btn {
+    width: 200px;
     margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #F0AC03; 
+    padding: 8px 20px;
+    background-color: var(--bg-banner-button-color); 
+    color: var(--font-primary-color);
     border: none;
-    border-radius: 20px;
+    border-radius: 40px;
     cursor: pointer;
     font-size: 1em;
+    transition: background-color 0.3s ease;
 }
 
 .main-btn:hover {
-    background-color: #f8d06a; 
+    background-color: var(--bg-banner-button-hover-color); 
 }
 
 @media (max-width: 768px) {
