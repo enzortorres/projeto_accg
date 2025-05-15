@@ -16,7 +16,10 @@
                     <img src="{{ animal.fotos.first.imagem.url }}" class="animal-foto">
                     {% endif %}
                     <h3 class="animal-nome">{{ animal.nome }}</h3>
-                    <p class="animal-dados">{{ animal.get_tipo_display }} • {{ animal.get_sexo_display }}</p>
+                    <div class="animal-dados">
+                        <p>{{ animal.get_tipo_display }} • {{ animal.idade }}</p>
+                        <p>{{ animal.get_sexo_display }}</p>
+                    </div>
                 </div>
                 {% endfor %}
             {% else %}
