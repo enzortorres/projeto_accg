@@ -11,9 +11,9 @@ class Animal(models.Model):
         verbose_name_plural = 'Animais'
         db_table            = '"animal"'
     
-    SEXOS = [
-        ('masculino', 'Masculino'),
-        ('feminino', 'Feminino'),
+    SEXO_CHOICES = [
+        ('macho', 'Macho'),
+        ('femea', 'Fêmea'),
     ]
     
     TIPO_CHOICES = [
@@ -21,11 +21,18 @@ class Animal(models.Model):
         ('gato', 'Gato'),
     ]
     
+    PORTE_CHOICES = [
+        ('pequeno', 'Pequeno'),
+        ('medio', 'Médio'),
+        ('grande', 'Grande'),
+    ]
+    
     nome            = models.CharField(max_length=100)
-    sexo            = models.CharField(max_length=100, choices=SEXOS)
+    sexo            = models.CharField(max_length=20, choices=SEXO_CHOICES)
+    porte           = models.CharField(max_length=20, choices=PORTE_CHOICES)
+    tipo            = models.CharField(max_length=20, choices=TIPO_CHOICES)
     data_nascimento = models.DateField()
     descricao       = models.TextField(blank=True)  # deixei opcional para facilitar
-    tipo            = models.CharField(max_length=20, choices=TIPO_CHOICES)
     
     @property
     def idade(self):

@@ -16,15 +16,17 @@ class Command(BaseCommand):
         fake = Faker()
         TIPOS = ['cachorro', 'gato']
         TESTES = ['Parvovírus', 'Raiva', 'Leishmaniose', 'Coronavírus Canino', 'FIV', 'Felv']
-        SEXOS = ['masculino', 'feminino']
+        SEXOS = ['macho', 'femea']
+        PORTES = ['pequeno', 'medio', 'grande']
         qtd = options['qtd']
 
         for _ in range(qtd):
-            nome = fake.first_name()
-            tipo = random.choice(TIPOS)
-            sexo = random.choice(SEXOS)
-            descricao = fake.text(max_nb_chars=200)
-            dias_atras = random.randint(30, 365 * 10)
+            nome            = fake.first_name()
+            tipo            = random.choice(TIPOS)
+            sexo            = random.choice(SEXOS)
+            porte           = random.choice(PORTES)
+            descricao       = fake.text(max_nb_chars=200)
+            dias_atras      = random.randint(30, 365 * 10)
             data_nascimento = date.today() - timedelta(days=dias_atras)
             self.stdout.write(self.style.WARNING(f"Criando {tipo}: {nome}"))
 
@@ -32,6 +34,7 @@ class Command(BaseCommand):
                 nome=nome,
                 sexo=sexo,
                 tipo=tipo,
+                porte=porte,
                 descricao=descricao,
                 data_nascimento=data_nascimento,
             )

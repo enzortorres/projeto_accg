@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap');
 
 
-.section_inicio_home{
+.section_inicio_home {
     height: 500px;
     width: 100%;
     display: flex;
@@ -10,14 +10,14 @@
     justify-content: center;
 }
 
-.container_informacoes{
+.container_informacoes {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 1000px;
 }
 
-.elementos_informacoes{
+.elementos_informacoes {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -25,37 +25,37 @@
     height: 250px;
 }
 
-.elementos_informacoes h1{
+.elementos_informacoes h1 {
     font-weight: 800;
-    font-family: "Inter", sans-serif;
+    /* font-family: "Inter", sans-serif; */
     letter-spacing: 1.5px;
     color: #303030;
     padding-top: 10px;
 }
 
-@media(max-width:1050px){
+@media(max-width:1050px) {
     .container_informacoes{
         width: 90%;
     }
 }
 
-@media(max-width:750px){
-    .container_informacoes{
+@media(max-width:750px) {
+    .container_informacoes {
         flex-direction: column;
         gap: 20px;
     }
 
-    .section_inicio_home{
+    .section_inicio_home {
         height: 850px;
     }
 }
 
-.elementos_informacoes img{
+.elementos_informacoes img {
     width: 180px;
     height: 180px;
 }
 
-.adote_coracao_section{
+.adote_coracao_section {
     width: 100%;
     height: 600px;
     display: flex;
@@ -64,7 +64,7 @@
     font-weight:100;
 }
 
-.left_container_coracao{
+.left_container_coracao {
     width: 50%;
     height: 100%;
     background-color: #7291CA;
@@ -73,18 +73,18 @@
     justify-content: center;
 }
 
-.left_interno_coracao{
+.left_interno_coracao {
     width: 450px;
     padding: 20px;
 }
 
-.h2_coracao{
+.h2_coracao {
     font-size: 2rem;
     font-family: "Roboto", sans-serif;
     font-weight: 300;
 }
 
-.h1_coracao{
+.h1_coracao {
     font-family: "Poetsen One", sans-serif;
     font-weight: 400;
     font-size: 3.7rem;
@@ -92,14 +92,13 @@
     margin-top: 5px;
 }
 
-.p_coracao{
-    font-family: "Roboto", sans-serif;
+.p_coracao {
     font-weight: 300;
     font-size: 1.2rem;
     line-height: 1.6rem;
     letter-spacing: 1px;
 }
-.botao_coracao{
+.botao_coracao {
     background-color: var(--bg-banner-button-color);
     color: var(--font-primary-color);
     border: 0;
@@ -112,34 +111,34 @@
     font-size: 1rem;
 }
 
-.right_container_coracao{
+.right_container_coracao {
     width: 50%;
     height: 100%;
     background-image: url(../src/images/bolinha.png);
     background-position: center;
     background-size: cover;
 }
-.containerBtn{
+.containerBtn {
     width: 100%;
     display: flex;
     justify-content: center;
 }
 
 @media(max-width:980px){
-    .adote_coracao_section{
+    .adote_coracao_section {
         flex-direction: column;
         height: fit-content;
     }
-    .left_container_coracao{
+    .left_container_coracao {
         width: 100%;
         height: 70%;
     }
-    .right_container_coracao{
+    .right_container_coracao {
         display: none;
     }
 }
 
-@media(max-width:500px){
+@media(max-width:500px) {
     .h2_coracao{
         font-size: 1.7rem;
     }
@@ -154,7 +153,7 @@
 
 
 
-.perguntas_frequentes{
+.perguntas_frequentes {
     height: fit-content;
     width: 80%;
     margin: 0 auto;
@@ -194,19 +193,19 @@
     transform: rotate(-60deg);
 } */
 
-.title_faq{
+.title_faq {
     font-family: "Roboto", sans-serif;
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: 300;
     margin-bottom: 2.7rem;
 }
 
-.faq{
+.faq {
     max-width: 1000px;
     border-bottom: 1px solid black;
- }
+}
 
-.question{
+.question {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -215,47 +214,46 @@
     padding-left: 20px;
 }
 
-.question h3{
-    font-size: 1.5rem;
+.question h3 {
     font-family: "Roboto", sans-serif;
     font-weight: 300;
 }
 
-.resposta{
+.resposta {
     max-height: 0;
     overflow: hidden;
     transition: all 0.7s ease;
     padding-left: 15px;
 }
 
-.resposta p{
+.resposta p {
     line-height: 1.6;
     font-size: 1rem;
     color: #7D7D7D;
     padding-bottom: 1rem;
 }
 
-.faq.active .resposta{
+.faq.active .resposta {
     max-height: 300px;
     transition: all 1s ease;
 }
 
-.faq.active svg{
+.faq.active svg {
     transform: rotate(180deg);
 }
 
-svg{
+svg {
     transition: transform 0.3s ease-in;
 }
 
-@media(max-width:585px){
-    .title_faq{
+@media(max-width:585px) {
+    .title_faq {
         font-size: 2rem;
     }
-    .question h3{
+    .question h3 {
         font-size: 1rem;
     }
-    .resposta p{
+    .resposta p {
         font-size: 0.8rem;
     }
 }

@@ -5,7 +5,11 @@
     --bg-header-color: #4D6FAD;
     --bg-banner-button-color: #F0AC03;
     --bg-banner-button-hover-color: #dfa615;
+    --bg-card-color: #F6F6F6;
     --font-primary-color: #FAFAFA;
+    --font-secondary-color: #7291CA;
+    --font-dark-color: #000;
+    --font-light-color: #919191;
 }
 
 * {
@@ -32,7 +36,7 @@
 .animais {
     display: flex;
     max-width: 1200px;
-    gap: 100px;
+    gap: 30px;
     flex-flow: row wrap;
     align-items: center;
     justify-content: center;
@@ -40,26 +44,50 @@
 
 .animal {
     display: flex;
-    align-items: center;
     flex-direction: column;
-    gap: 10px;
+    background: #F6F6F6;
+    padding: 10px;
+    border-radius: 20px;
 }
 
 .animal-foto {
     width: 200px;
-    height: 200px;
-    border-radius: 50%;
+    height: 150px;
+    border-radius: 20px;
     background: #000;
 }
 
 .animal-nome {
-    color: var(--bg-primary-color);
-    font-size: 32px;
+    color: var(--font-dark-color);
+    font-size: 24px;
     font-weight: bolder;
 }
 
 .animal-dados {
     display: flex;
     flex-direction: column;
+    color: var(--font-light-color);
+    font-size: 14px;
+    gap: 10px;
+}
+
+.animal-resumo {
+    display: flex;
     align-items: center;
+    gap: 20px;
+}
+
+.animal-resumo p{
+    display: flex;
+    max-width: 90px;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+}
+
+.idade-text {
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    line-height: 16px;
 }

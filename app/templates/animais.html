@@ -17,13 +17,26 @@
                     {% endif %}
                     <h3 class="animal-nome">{{ animal.nome }}</h3>
                     <div class="animal-dados">
-                        <p>{{ animal.get_tipo_display }} • {{ animal.idade }}</p>
-                        <p>{{ animal.get_sexo_display }}</p>
+                        <div class="animal-porte">
+                            <p>Porte {{ animal.get_porte_display }}</p>
+                        </div>
+                        <div class="animal-resumo">
+                            <div class="animal-sexo">
+                                {% if animal.sexo == 'macho' %}
+                                    <p><img src="{% static 'global/src/icons/male.png' %}" alt="" class="sexo-icon"> {{ animal.get_sexo_display }}</p>
+                                {% else %}
+                                    <p><img src="{% static 'global/src/icons/female.png' %}" alt="" class="sexo-icon"> {{ animal.get_sexo_display }}</p>
+                                {% endif %}
+                            </div>
+                            <div class="animal-idade">
+                                <p class="idade-text"><img src="{% static 'global/src/icons/clock-icon.png' %}" class="clock-icon"> {{ animal.idade }}</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 {% endfor %}
             {% else %}
-                <h1>Nenhum animal encontrado.</h1>
+                <h1>Nenhum animal disponível.</h1>
             {% endif %}
         </section>
     </main>
