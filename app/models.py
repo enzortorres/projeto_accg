@@ -11,12 +11,18 @@ class Animal(models.Model):
         verbose_name_plural = 'Animais'
         db_table            = '"animal"'
     
+    SEXOS = [
+        ('masculino', 'Masculino'),
+        ('feminino', 'Feminino'),
+    ]
+    
     TIPO_CHOICES = [
         ('cachorro', 'Cachorro'),
         ('gato', 'Gato'),
     ]
     
     nome            = models.CharField(max_length=100)
+    sexo            = models.CharField(max_length=100, choices=SEXOS)
     data_nascimento = models.DateField()
     descricao       = models.TextField(blank=True)  # deixei opcional para facilitar
     tipo            = models.CharField(max_length=20, choices=TIPO_CHOICES)
@@ -33,12 +39,13 @@ class Animal(models.Model):
             anos -= 1
             meses += 12
 
-        if meses == 0:
-            return f"{anos} anos"
-        elif anos == 0:
-            return f"{meses} meses"
-        else:
-            return f"{anos} anos e {meses} meses"
+        partes = []
+        if anos > 0:
+            partes.append(f"{anos} ano" if anos == 1 else f"{anos} anos")
+        if meses > 0:
+            partes.append(f"{meses} mês" if meses == 1 else f"{meses} meses")
+
+        return " e ".join(partes) if partes else "0 meses"
     
     def __str__(self):
         return self.nome

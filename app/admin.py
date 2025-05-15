@@ -93,11 +93,11 @@ class ResultadoTesteInline(admin.TabularInline):
 @admin.register(models.Animal)
 class AnimalAdmin(admin.ModelAdmin):
     form               = AnimalAdminForm
-    list_display       = ('id', 'nome', 'tipo', 'foto_admin', 'idade')
+    list_display       = ('id', 'nome', 'sexo','tipo', 'foto_admin', 'idade')
     list_display_links = ('id', 'nome',)
-    list_filter        = ('tipo', IdadeFilter,)
+    list_filter        = ('tipo', 'sexo', IdadeFilter,)
     inlines            = [AnimalFotoInline, ResultadoTesteInline]
-    fields             = ('nome', 'tipo', 'descricao', 'idade_anos', 'idade_meses')
+    fields             = ('nome', 'sexo', 'tipo', 'descricao', 'idade_anos', 'idade_meses')
     ordering           = ('id',)
 
     def idade(self, obj):

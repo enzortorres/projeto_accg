@@ -1,5 +1,27 @@
 {% extends "base.html" %}
+{% load static %}
+
+{% block css_extras %}
+    <link rel="stylesheet" href="{% static 'global/css/animais.css' %}">
+{% endblock css_extras %}
 
 {% block content %}
-    
+    <main class="main">
+        <h1 class="title">Animais</h1>
+        <section class="animais">
+            {% if animais %}
+                {% for animal in animais %}
+                <div class="animal">
+                    {% if animal.fotos.all %}
+                    <img src="{{ animal.fotos.first.imagem.url }}" class="animal-foto">
+                    {% endif %}
+                    <h3 class="animal-nome">{{ animal.nome }}</h3>
+                    <p class="animal-dados">{{ animal.get_tipo_display }} • {{ animal.get_sexo_display }}</p>
+                </div>
+                {% endfor %}
+            {% else %}
+                <h1>Nenhum animal encontrado.</h1>
+            {% endif %}
+        </section>
+    </main>
 {% endblock content %}

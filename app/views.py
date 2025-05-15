@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import Animal
 
 # Create your views here.
 def index(request):
@@ -39,10 +40,13 @@ def apadrinhamento(request):
     return render(request, 'apadrinhamento.html', context=context)
 
 def animais(request):
+    animais = Animal.objects.all()
+    
     context = {
         'banner_title': 'Animais para adoção',
         'banner_subtitle': 'Todos os animais merecem um lar cheio de amor e carinho.',
         'banner_imagem': 'global/src/images/banner-animais.png',
+        'animais': animais,
     }
     
     return render(request, 'animais.html', context=context)
