@@ -128,15 +128,14 @@
 @media(max-width:980px){
     .adote_coracao_section{
         flex-direction: column;
-        height: 1100px;
+        height: fit-content;
     }
     .left_container_coracao{
         width: 100%;
         height: 70%;
     }
     .right_container_coracao{
-        width: 100%;
-        height: 60%;
+        display: none;
     }
 }
 
@@ -156,5 +155,115 @@
 
 
 .perguntas_frequentes{
-    height: 500px;
+    height: fit-content;
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 70px;
+    gap: 1rem;
+    margin-bottom: 7rem;
+    position: relative;
 }
+
+/* .patinha{
+    width: 150px;
+    height: 150px;
+    background-image: url("../src/images/patinha.png");
+    background-size: cover;
+    position: absolute;
+}
+
+.patinha:nth-child(1){
+    right: 0;
+    transform: rotate(20deg);
+}
+.patinha:nth-child(2){
+    right: 0;
+    bottom: 0;
+    transform: rotate(0deg);
+}
+.patinha:nth-child(3){
+    left: 0;
+    transform: rotate(-50deg);
+}
+.patinha:nth-child(4){
+    left: 0;
+    bottom: 0;
+    transform: rotate(-60deg);
+} */
+
+.title_faq{
+    font-family: "Roboto", sans-serif;
+    font-size: 3rem;
+    font-weight: 300;
+    margin-bottom: 2.7rem;
+}
+
+.faq{
+    max-width: 1000px;
+    border-bottom: 1px solid black;
+ }
+
+.question{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    height: 60px;
+    padding-left: 20px;
+}
+
+.question h3{
+    font-size: 1.5rem;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+}
+
+.resposta{
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.7s ease;
+    padding-left: 15px;
+}
+
+.resposta p{
+    line-height: 1.6;
+    font-size: 1rem;
+    color: #7D7D7D;
+    padding-bottom: 1rem;
+}
+
+.faq.active .resposta{
+    max-height: 300px;
+    transition: all 1s ease;
+}
+
+.faq.active svg{
+    transform: rotate(180deg);
+}
+
+svg{
+    transition: transform 0.3s ease-in;
+}
+
+@media(max-width:585px){
+    .title_faq{
+        font-size: 2rem;
+    }
+    .question h3{
+        font-size: 1rem;
+    }
+    .resposta p{
+        font-size: 0.8rem;
+    }
+}
+
+@media(max-width:397px){
+    .title_faq{
+        font-size: 1.5rem;
+    }
+    
+}
+
