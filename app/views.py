@@ -37,3 +37,12 @@ def apadrinhamento(request):
     }
     
     return render(request, 'apadrinhamento.html', context=context)
+
+def animais(request):
+    context = {
+        'banner_title': 'Animais para adoção',
+        'banner_subtitle': 'Todos os animais merecem um lar cheio de amor e carinho.',
+        'banner_imagem': 'global/src/images/banner-animais.png',
+    }
+    
+    return render(request, 'animais.html', context=context)
