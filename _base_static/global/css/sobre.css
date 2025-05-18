@@ -1,6 +1,93 @@
-{% extends "base.html" %}
-{% load static %}
+.timeline {
+  position: relative;
+  max-width: 900px;
+  margin: auto;
+  padding: 40px 20px;
+  background-color: #007bff;
+}
 
-{% block css_extras %}
-    <link rel="stylesheet" href="{% static 'global/css/adotar.css' %}">
-{% endblock css_extras %}
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 100%;
+  background-color: #007bff;
+}
+
+.timeline-event {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 40px 0;
+  position: relative;
+}
+
+.timeline-content,
+.timeline-image {
+  width: 45%;
+}
+
+.timeline-content {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-content h3 {
+  margin-top: 0;
+  color: #333;
+}
+
+.timeline-content p {
+  margin-bottom: 0;
+  color: #555;
+}
+
+.timeline-image img {
+  width: 100%;
+  height: auto;
+  border: 4px solid white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transform: rotate(-2deg);
+}
+
+.timeline-event:nth-child(even) .timeline-image img {
+  transform: rotate(2deg);
+}
+
+.left {
+  order: 1;
+  text-align: right;
+}
+
+.right {
+  order: 2;
+  text-align: left;
+}
+
+@media screen and (max-width: 768px) {
+  .timeline-event {
+    flex-direction: column;
+  }
+
+  .timeline-content,
+  .timeline-image {
+    width: 100%;
+    text-align: center;
+  }
+
+  .left,
+  .right {
+    order: unset;
+    text-align: center;
+  }
+
+  .timeline::before {
+    left: 10px;
+    transform: none;
+  }
+}
