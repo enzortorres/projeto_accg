@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=M+PLUS+Rounded+1c&family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap');
+
+
 .timeline {
   position: relative;
   max-width: 900px;
@@ -63,11 +68,14 @@
 .timeline-content h3 {
   margin-top: 0;
   color: #333;
+  font-family: "Poetsen One", sans-serif;
+
 }
 
 .timeline-content p {
   margin-bottom: 0;
   color: #555;
+  
 }
 
 .timeline-image img {
