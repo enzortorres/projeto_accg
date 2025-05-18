@@ -33,7 +33,7 @@
     overflow: hidden;
 }
 
-.conteudo {
+.switch {
     position: absolute;
     height: 100%;
     width: 300px;
@@ -43,6 +43,7 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: 150px;
+    z-index: 1000;
 }
 
 .opcao1 {
@@ -61,4 +62,104 @@
     background-color: var(--bg-switch-apadrinhe-color);
     background-image: url("../src/icons/switch-apadrinhe.png");
     box-shadow: -4px 0px 10px rgba(0, 0, 0, 0.4);
+}
+
+.hidden {
+    display: none !important;
+}
+
+
+.content-doe {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    top: 50%;
+    right: -75px;
+    transform: translateY(-50%);
+    justify-self: center;
+    font-family: "Inter", sans-serif;
+    z-index: 999;
+    transition: display 0.3s ease;
+}
+
+.container-switch h1 {
+    font-weight: bold;
+    line-height: 36px;
+    font-size: 36px;
+}
+
+.content-doe p {
+    max-width: 230px;
+}
+
+.content-adote {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0 25px 0 50px;
+    z-index: 999;
+    transition: display 0.3s ease;
+}
+
+.content-adote p {
+    font-size: 24px;
+    max-width: 160px;
+}
+
+.adote-container-left {
+    display: flex;
+    justify-content: end;
+    text-align: end;
+}
+
+.content-apadrinhe {
+    position: relative;
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: end;
+    text-align: end;
+    right: 100px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 999;
+    transition: display 0.3s ease;
+}
+
+.content-apadrinhe p {
+    max-width: 250px;
+}
+
+.btn-switch {
+    width: 200px;
+    height: 50px;
+    font-size: 24px;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+    margin-top: 10px;
+    box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.4);
+}
+
+.doe-btn {
+    background-color: var(--bg-switch-doe-color);
+    color: #A77B3D;
+    text-shadow: 0px 0px 1px rgb(176, 130, 65);
+}
+
+.adote-btn {
+    background-color: var(--bg-switch-adotar-color);
+    color: #799FE5;
+    text-shadow: 0px 0px 1px rgb(161, 186, 234);
+}
+
+.apadrinhe-btn {
+    background-color: var(--bg-switch-apadrinhe-color);
+    color: #CCBCAA;
+    text-shadow: 0px 0px 1px rgb(244, 243, 242);
 }

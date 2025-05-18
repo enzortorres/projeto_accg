@@ -2,14 +2,34 @@
 {% load static %}
 
 {% block css_extras %}
-    <link rel="stylesheet" href="{% static "global/css/comoajudar.css" %}">
+    <link rel="stylesheet" href="{% static 'global/css/comoajudar.css' %}">
 {% endblock css_extras %}
 
 {% block content %}
     <main class="main">
         <div class="container-switch">
-            <div class="conteudo opcao1"></div>
+            <div class="switch opcao1"></div>
+            <div class="content-doe">
+                <h1>DOE PARA UM PET</h1>
+                <p>Sua doação vira ração, vacinas e muito amor.</p>
+                <button class="btn-switch doe-btn">Clique Aqui</button>
+            </div>
+            <div class="content-adote hidden">
+                <div class="adote-container-left">
+                    <p>Quer um amigo, ou um novo membro na família ?</p>
+                </div>
+                <div class="adote-container-right">
+                    <h1>ADOTE</h1>
+                    <p>Adote um pet.</p>
+                    <button class="btn-switch adote-btn">Clique Aqui</button>
+                </div>
+            </div>
+            <div class="content-apadrinhe hidden">
+                <h1>APADRINHE UM PET</h1>
+                <p>Contribue mensalmente para o bem-estar de um pet.</p>
+                <button class="btn-switch apadrinhe-btn">Clique Aqui</button>
+            </div>
         </div>
     </main>
-    <script src="{% static "global/js/switch.js" %}"></script>
+    <script src="{% static 'global/js/switch-como-ajudar.js' %}"></script>
 {% endblock content %}
