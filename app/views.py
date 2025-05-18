@@ -59,5 +59,15 @@ def sobre(request):
     }
     return render(request, 'sobre.html',context=context)
 
+def como_ajudar(request):
+    context = {
+        'banner_title': 'A adoção muda duas vidas: a deles e a sua.',
+        'banner_subtitle': 'Um novo começo para ambos',
+        'banner_imagem': 'global/src/images/banner-como-ajudar.png',
+        'banner_button_text': 'Adotar',
+    }
+    
+    return render(request, 'comoajudar.html',context=context)
+
 
 

@@ -10,6 +10,7 @@ urlpatterns = [
     path('doacao/', views.doacao, name='doacao'),
     path('animais/', views.animais, name='animais'),
     path('sobre/', views.sobre, name='sobre'),
+    path('comoajudar/', views.como_ajudar, name='comoajudar'),
     path('apadrinhamento/', views.apadrinhamento, name='apadrinhamento'),
     path('admin/', admin.site.urls),
 ]

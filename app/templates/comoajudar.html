@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css_extras %}
+    <link rel="stylesheet" href="{% static "global/css/comoajudar.css" %}">
+{% endblock css_extras %}
+
+{% block content %}
+    <main class="main">
+        <div class="container-switch">
+            <div class="conteudo opcao1"></div>
+        </div>
+    </main>
+    <script src="{% static "global/js/switch.js" %}"></script>
+{% endblock content %}
