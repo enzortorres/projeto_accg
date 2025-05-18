@@ -50,3 +50,9 @@ def animais(request):
     }
     
     return render(request, 'animais.html', context=context)
+
+def sobre(request):
+    return render(request, 'sobre.html')
+
+
+
