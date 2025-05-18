@@ -52,7 +52,12 @@ def animais(request):
     return render(request, 'animais.html', context=context)
 
 def sobre(request):
-    return render(request, 'sobre.html')
+    context = {
+        'banner_title': 'Conheça a ONG',
+        'banner_subtitle': 'Nossa história até agora...',
+        'banner_imagem': 'global/src/images/banner-sobre-nos.png',
+    }
+    return render(request, 'sobre.html',context=context)
 
 
 
