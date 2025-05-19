@@ -15,10 +15,16 @@ switchButton.style.left = positions[i];
 
 function updateContent(index) {
     contents.forEach((content, idx) => {
+        content.classList.remove('fade-in');
+        content.classList.add('hidden');
+
         if (idx === index) {
             content.classList.remove('hidden');
-        } else {
-            content.classList.add('hidden');
+
+            // Garante que a animação é reativada mesmo se for o mesmo elemento
+            setTimeout(() => {
+                content.classList.add('fade-in');
+            }, 10);
         }
     });
 }

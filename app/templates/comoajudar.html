@@ -12,7 +12,7 @@
             <div class="content-doe">
                 <h1>DOE PARA UM PET</h1>
                 <p>Sua doação vira ração, vacinas e muito amor.</p>
-                <button class="btn-switch doe-btn">Clique Aqui</button>
+                <a href="{% url 'app:doacao' %}" class="btn-switch doe-btn">Clique Aqui</a>
             </div>
             <div class="content-adote hidden">
                 <div class="adote-container-left">
@@ -21,13 +21,13 @@
                 <div class="adote-container-right">
                     <h1>ADOTE</h1>
                     <p>Adote um pet.</p>
-                    <button class="btn-switch adote-btn">Clique Aqui</button>
+                    <a href="{% url 'app:adotar' %}" class="btn-switch adote-btn">Clique Aqui</a>
                 </div>
             </div>
             <div class="content-apadrinhe hidden">
                 <h1>APADRINHE UM PET</h1>
                 <p>Contribue mensalmente para o bem-estar de um pet.</p>
-                <button class="btn-switch apadrinhe-btn">Clique Aqui</button>
+                <a href="{% url 'app:apadrinhamento' %}" class="btn-switch apadrinhe-btn">Clique Aqui</a>
             </div>
         </div>
     </main>
