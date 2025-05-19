@@ -1,0 +1,114 @@
+/* LOGIN FORM */
+
+:root {
+    --bg-primary-color: #7291CA;
+    --bg-header-color: #4D6FAD;
+    --font-primary-color: #FAFAFA;
+}
+
+html {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-primary-color);
+}
+
+.login {
+    background: transparent;
+    height: auto;
+    animation: fadeIn 1s ease forwards;
+}
+
+.logo-accg {
+    width: 70px;
+    height: 70px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+}
+
+#branding {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login #header {
+    height: auto;
+    width: 100%;
+    padding: 0px;
+    border-radius: 0;
+    justify-content: center;
+    background-color: var(--bg-header-color);
+}
+
+.login #header h1 {
+    font-weight: 600;
+    font-size: 1.125rem;
+    margin: 0;
+}
+
+.login #header h1 a {
+    color: var(--font-primary-color);
+}
+
+#site-name a:link, #site-name a:visited {
+    color: var(--font-primary-color);
+}
+
+.login #content {
+    padding: 20px;
+}
+
+.login #container {
+    background: var(--body-bg);
+    border: 1px solid var(--hairline-color);
+    border-radius: 4px;
+    overflow: hidden;
+    width: 28em;
+    min-width: 300px;
+    margin: 100px auto;
+    height: auto;
+}
+
+.login .form-row {
+    padding: 4px 0;
+}
+
+.login .form-row label {
+    display: block;
+    line-height: 2em;
+}
+
+.login .form-row #id_username, .login .form-row #id_password {
+    padding: 8px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.login .submit-row {
+    padding: 1em 0 0 0;
+    margin: 0;
+    text-align: center;
+}
+
+.submit-row input {
+    background-color: var(--bg-header-color);
+}
+
+.login .password-reset-link {
+    text-align: center;
+}

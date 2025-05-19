@@ -1,0 +1,11 @@
+{% extends "admin/base.html" %}
+{% load static %}
+
+{% block title %}Painel ACCG{% endblock %}
+
+{% block branding %}
+    <img src="{% static 'global/src/icons/logo1.png' %}" class="logo-accg">
+    <h1 id="site-name">
+        <a href="{% url 'admin:index' %}">Painel de Administração ACCG</a>
+    </h1>
+{% endblock %}

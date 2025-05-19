@@ -121,12 +121,3 @@ class AnimalAdmin(admin.ModelAdmin):
     foto_admin.short_description = 'Foto'
     foto_admin.admin_order_field = 'fotos__imagem'  # permite ordenar por imagem
 
-@admin.register(models.AnimalFoto)
-class AnimalFotoAdmin(admin.ModelAdmin):
-    list_display = ('animal', 'imagem')
-    ordering     = ('id',)
-
-@admin.register(models.ResultadoTeste)
-class ResultadoTestesAdmin(admin.ModelAdmin):
-    list_display = ('animal', 'nome_teste', 'resultado', 'data')
-    ordering     = ('animal',)
