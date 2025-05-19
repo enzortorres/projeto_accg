@@ -38,6 +38,11 @@ img{
 }
 
 .banner-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
     background-color: var(--bg-banner-button-color);
     color: var(--font-primary-color);
     border: 0;
