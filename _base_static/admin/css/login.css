@@ -55,8 +55,17 @@ html {
     width: 100%;
     padding: 0px;
     border-radius: 0;
-    justify-content: start;
+    justify-content: center;
     background-color: var(--bg-header-color);
+}
+
+.login #container {
+    justify-content: center;
+    align-items: center;
+}
+
+#brading-line {
+    display: none !important;
 }
 
 .login #header h1 {

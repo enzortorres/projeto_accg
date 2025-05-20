@@ -1,23 +1,24 @@
-const header = document.querySelector('#header');
-const closeHeader = document.querySelector('.close-header');
+const body = document.querySelector('body');
+if (!body.classList.contains('login')) {
+    console.log("entrou")
+    const header = document.querySelector('#header');
+    const closeHeader = document.querySelector('.close-header');
 
-closeHeader.addEventListener("click", () => {
-    header.classList.toggle('header-hidden');
-});
+    closeHeader.addEventListener("click", () => {
+        header.classList.toggle('header-hidden');
+    });
 
-let headerHiddenApplied = false;
+    let headerHiddenApplied = false;
 
-function handleResize() {
-    if (window.innerWidth < 1000 && !headerHiddenApplied) {
-        header.classList.add('header-hidden');
-        headerHiddenApplied = true;
-    } else if (window.innerWidth >= 1000) {
-        headerHiddenApplied = false;
+    function handleResize() {
+        if (window.innerWidth < 1000 && !headerHiddenApplied) {
+            header.classList.add('header-hidden');
+            headerHiddenApplied = true;
+        } else if (window.innerWidth >= 1000) {
+            headerHiddenApplied = false;
+        }
     }
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
 }
-
-// Chama na carga da página
-handleResize();
-
-// Monitora redimensionamento
-window.addEventListener('resize', handleResize);

@@ -953,6 +953,7 @@ a.deletelink:focus, a.deletelink:hover {
     padding: 0px 10px;
     border-radius: 0px 15px 15px 0px;
     background: var(--header-bg);
+    transition: width 0.3s ease;
 }
 
 #header.header-hidden {
@@ -1010,6 +1011,7 @@ a.deletelink:focus, a.deletelink:hover {
     height: 2px;
     background: #fff;
     margin: 0 0 30px 0;
+    transition: width 0.3s ease;
 }
 
 .logo-accg {
@@ -1093,7 +1095,6 @@ a.deletelink:focus, a.deletelink:hover {
     display: flex;
     align-items: center;
     justify-content: start;
-    border-bottom: 1px solid var(--border-color);
     font-size: 24px;
 }
 
@@ -1110,6 +1111,7 @@ a.deletelink:focus, a.deletelink:hover {
     gap: 5px;
     border-bottom: 1px solid var(--border-color);
     font-size: 18px;
+    transition: all 0.3s ease;
 }
 
 #header.header-hidden #user-tools a,
@@ -1139,11 +1141,11 @@ a.deletelink:focus, a.deletelink:hover {
 #content-related {
     background: var(--darkened-bg);
     border-radius: 15px;
+    overflow: hidden;
 }
 
 #content-related .module {
     background: none;
-    overflow: hidden;
 }
 
 #content-related h3 {
