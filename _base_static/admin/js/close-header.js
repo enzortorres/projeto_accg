@@ -1,6 +1,5 @@
 const body = document.querySelector('body');
 if (!body.classList.contains('login')) {
-    console.log("entrou")
     const header = document.querySelector('#header');
     const closeHeader = document.querySelector('.close-header');
 

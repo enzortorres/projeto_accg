@@ -64,6 +64,13 @@ html {
     align-items: center;
 }
 
+.login #content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 #brading-line {
     display: none !important;
 }
