@@ -37,36 +37,28 @@
                     <div id="branding">
                         {% block branding %}{% endblock %}
                     </div>
+                    <div class="close-header"></div>
                     <div id="brading-line"></div>
                     {% block usertools %}
                     {% if has_permission %}
                     <div id="user-tools">
                         {% block userlinks %}
                             {% if site_url %}
-                                <a href="{{ site_url }}">{% translate 'View site' %}</a>
-                            {% endif %}
-                            {% if user.is_active and user.is_staff %}
-                                {% url 'django-admindocs-docroot' as docsroot %}
-                                {% if docsroot %}
-                                    <a href="{{ docsroot }}">{% translate 'Documentation' %}</a>
-                                {% endif %}
+                                <a href="{{ site_url }}"><img src="{% static 'global/src/icons/site-www.png' %}" class="user-tools-icons"><div class="user-tools-text">{% translate 'View site' %}</div></a>
                             {% endif %}
                             {% if user.has_usable_password %}
-                            <a href="{% url 'admin:password_change' %}">{% translate 'Change password' %}</a>
+                            <a href="{% url 'admin:password_change' %}"><img src="{% static 'global/src/icons/change-password.png' %}" class="user-tools-icons"><div class="user-tools-text">{% translate 'Change password' %}</div></a>
                             {% endif %}
                             <form id="logout-form" method="post" action="{% url 'admin:logout' %}">
                                 {% csrf_token %}
-                                <button type="submit">{% translate 'Log out' %}</button>
-                            </form>
+                                <button type="submit"><img src="{% static 'global/src/icons/logout-icon.png' %}" class="user-tools-icons"><div class="user-tools-text">{% translate 'Log out' %}</div></button>
+                            <div class="user-tools-text"></form></div>
                             {% include "admin/color_theme_toggle.html" %}
                         {% endblock %}
                     </div>
                     {% endif %}
                     {% endblock %}
                     {% block nav-global %}{% endblock %}
-                </div>
-                <div class="side-bar-header">
-                    <button class="close-header"><</button>
                 </div>
                 <script src="{% static 'admin/js/close-header.js' %}"></script>
             </header>

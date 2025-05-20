@@ -46,12 +46,16 @@ html {
     align-items: center;
 }
 
+.close-header {
+    display: none !important;
+}
+
 .login #header {
     height: auto;
     width: 100%;
     padding: 0px;
     border-radius: 0;
-    justify-content: center;
+    justify-content: start;
     background-color: var(--bg-header-color);
 }
 
