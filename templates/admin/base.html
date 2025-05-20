@@ -88,7 +88,8 @@
         <div id="content" class="{% block coltype %}colM{% endblock %}">
             {% block pretitle %}{% endblock %}
             {% block content_title %}{% if title %}<h1>{{ title }}</h1>{% endif %}{% endblock %}
-            {% block object-tools %}{% endblock %}
+            {% block object-tools %}
+            {% endblock %}
             {% block content_subtitle %}
                 {% if subtitle %}
                     <h2>{{ subtitle }}</h2>
@@ -97,7 +98,8 @@
             {% block content %}
                 {{ content }}
             {% endblock %}
-            {% block sidebar %}{% endblock %}
+            {% block sidebar %}
+            {% endblock %}
             <br class="clear">
         </div>
         <!-- END Content -->

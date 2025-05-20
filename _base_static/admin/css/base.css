@@ -569,9 +569,45 @@ input[type=button][disabled].default {
 /* MODULES */
 
 .module {
-    border: none;
+    width: 100%;
     margin-bottom: 30px;
-    background: var(--body-bg);
+    border-left: 3px solid var(--primary);
+    padding: 10px;
+    border-radius: 15px;
+    background: #fafafa;
+    gap: 30px;
+}
+
+.model-animal,
+.model-group,
+.model-user {
+    display: flex;
+    gap: 50px;
+    justify-content: space-between;
+}
+
+.model-actions {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.app-auth.module {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+@media (max-width: 380px) {
+    .model-animal {
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .model-actions {
+        flex-direction: column;
+        gap: 0;
+    }
 }
 
 .module p, .module ul, .module h3, .module h4, .module dl, .module pre {
@@ -842,20 +878,17 @@ a.deletelink:focus, a.deletelink:hover {
 
 #container {
     position: relative;
-    width: 100%;
+    width: 100dvh;
     min-width: 980px;
-    padding: 0;
     display: flex;
-    height: 100%;
+    height: 100dvh;
 }
 
 #container > .main {
     display: flex;
-    flex: 1 0 auto;
 }
 
 .main > .content {
-    flex:  1 0;
     max-width: 100%;
 }
 
@@ -878,19 +911,18 @@ a.deletelink:focus, a.deletelink:hover {
 }
 
 .dashboard #content {
-    width: 600px;
+    width: 100%;
 }
 
 #content-main {
     float: left;
-    width: 100%;
 }
 
 #content-related {
+    height: fit-content;
     float: right;
-    width: 260px;
-    position: relative;
-    margin-right: -300px;
+    min-width: 150px;
+    max-width: 260px;
 }
 
 @media (forced-colors: active) {
@@ -901,19 +933,6 @@ a.deletelink:focus, a.deletelink:hover {
 
 /* COLUMN TYPES */
 
-.colMS {
-    margin-right: 300px;
-}
-
-.colSM {
-    margin-left: 300px;
-}
-
-.colSM #content-related {
-    float: left;
-    margin-right: 0;
-    margin-left: -300px;
-}
 
 .colSM #content-main {
     float: right;
@@ -1112,12 +1131,19 @@ a.deletelink:focus, a.deletelink:hover {
 
 /* SIDEBAR */
 
+#recent-actions-module {
+    height: 100%;
+    margin: 0;
+}
+
 #content-related {
     background: var(--darkened-bg);
+    border-radius: 15px;
 }
 
 #content-related .module {
     background: none;
+    overflow: hidden;
 }
 
 #content-related h3 {
