@@ -1,0 +1,27 @@
+{% load static i18n %}
+{% block content %}
+    {% for app in app_list %}
+        {% if app.app_label != 'auth' %}
+            {% for model in app.models %}
+                {% with model_name=model.object_name|lower %}
+                    {% if model.admin_url %}
+                        <a href="{{ model.admin_url }}"{% if model.admin_url in request.path|urlencode %} aria-current="page"{% endif %}>{{ model.name }}</a>
+                        {{ total }}
+                    {% else %}
+                        {{ model.name }}
+                    {% endif %}
+                    {% if model.add_url %}
+                        <div><a href="{{ model.add_url }}" class="addlink" aria-describedby="{{ app.app_label }}-{{ model_name }}">{% translate 'Add' %}</a></div>
+                    {% endif %}
+                    {% if model.admin_url and show_changelinks %}
+                        {% if model.view_only %}
+                            <div><a href="{{ model.admin_url }}" class="viewlink" aria-describedby="{{ app.app_label }}-{{ model_name }}">{% translate 'View' %}</a></div>
+                        {% else %}
+                            <div><a href="{{ model.admin_url }}" class="changelink" aria-describedby="{{ app.app_label }}-{{ model_name }}">{% translate 'Change' %}</a></div>
+                        {% endif %}
+                    {% endif %}
+                {% endwith %}
+            {% endfor %}
+        {% endif %}
+    {% endfor %}
+{% endblock %}

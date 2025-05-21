@@ -4,6 +4,16 @@ from django.contrib import admin
 from django import forms
 from datetime import date
 from app import models
+from .models import Animal
+
+original_each_context = admin.site.each_context
+
+def custom_each_context(request):
+    context = original_each_context(request)
+    context['total'] = Animal.objects.count()
+    return context
+
+admin.site.each_context = custom_each_context
 
 class IdadeFilter(SimpleListFilter):
     title = 'idade'
