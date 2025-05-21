@@ -12,5 +12,6 @@ urlpatterns = [
     path('sobre/', views.sobre, name='sobre'),
     path('comoajudar/', views.como_ajudar, name='comoajudar'),
     path('apadrinhamento/', views.apadrinhamento, name='apadrinhamento'),
+    
     path('admin/', admin.site.urls),
 ]

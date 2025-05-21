@@ -1,39 +1,45 @@
 {% load i18n %}
 
 {% if app_list %}
-    {% for app in app_list %}
-        <div class="app-{{ app.app_label }} module{% if app.app_url in request.path|urlencode %} current-app{% endif %}">
-            {% for model in app.models %}
-                {% with model_name=model.object_name|lower %}
-                <div class="model-{{ model_name }}{% if model.admin_url in request.path|urlencode %} current-model{% endif %}">
-                    <div id="{{ app.app_label }}-{{ model_name }}">
-                        {% if model.admin_url %}
-                            <a href="{{ model.admin_url }}"{% if model.admin_url in request.path|urlencode %} aria-current="page"{% endif %}>{{ model.name }}</a>
-                        {% else %}
-                            {{ model.name }}
-                        {% endif %}
-                    </div>
-
-                    <div class="model-actions">
-                        {% if model.add_url %}
-                            <div><a href="{{ model.add_url }}" class="addlink" aria-describedby="{{ app.app_label }}-{{ model_name }}">{% translate 'Add' %}</a></div>
-                        {% else %}
-                        {% endif %}
-                        {% if model.admin_url and show_changelinks %}
-                            {% if model.view_only %}
-                            <div><a href="{{ model.admin_url }}" class="viewlink" aria-describedby="{{ app.app_label }}-{{ model_name }}">{% translate 'View' %}</a></div>
-                            {% else %}
-                            <div><a href="{{ model.admin_url }}" class="changelink" aria-describedby="{{ app.app_label }}-{{ model_name }}">{% translate 'Change' %}</a></div>
-                            {% endif %}
-                        {% elif show_changelinks %}
-                            <div></div>
-                        {% endif %}
-                    </div>
-                </div>
-            {% endwith %}
+    <div class="tables-container">
+        {% for app in app_list %}
+            {% if app.app_label != 'auth' %}
+                <div class="app-{{ app.app_label }} module{% if app.app_url in request.path|urlencode %} current-app{% endif %} tables-cards">
+                    {% for model in app.models %}
+                        {% with model_name=model.object_name|lower %}
+                        <div class="model-{{ model_name }}{% if model.admin_url in request.path|urlencode %} current-model{% endif %}">
+                            <div id="{{ app.app_label }}-{{ model_name }}">
+                                {% if model.admin_url %}
+                                    <a href="{{ model.admin_url }}"{% if model.admin_url in request.path|urlencode %} aria-current="page"{% endif %}>{{ model.name }}</a>
+                                {% else %}
+                                    {{ model.name }}
+                                {% endif %}
+                            </div>
+                            <div class="model-count">
+                                {{ model.count }}
+                            </div>
+                            <div class="model-actions">
+                                {% if model.add_url %}
+                                    <div><a href="{{ model.add_url }}" class="addlink" aria-describedby="{{ app.app_label }}-{{ model_name }}">{% translate 'Add' %}</a></div>
+                                {% else %}
+                                {% endif %}
+                                {% if model.admin_url and show_changelinks %}
+                                    {% if model.view_only %}
+                                    <div><a href="{{ model.admin_url }}" class="viewlink" aria-describedby="{{ app.app_label }}-{{ model_name }}">{% translate 'View' %}</a></div>
+                                    {% else %}
+                                    <div><a href="{{ model.admin_url }}" class="changelink" aria-describedby="{{ app.app_label }}-{{ model_name }}">{% translate 'Change' %}</a></div>
+                                    {% endif %}
+                                {% elif show_changelinks %}
+                                    <div></div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    {% endwith %}
+                {% endfor %}
+            {% endif %}
+        </div>
         {% endfor %}
+        {% else %}
+        <p>{% translate 'You don’t have permission to view or edit anything.' %}</p>
     </div>
-{% endfor %}
-{% else %}
-    <p>{% translate 'You don’t have permission to view or edit anything.' %}</p>
 {% endif %}

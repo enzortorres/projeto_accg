@@ -4,6 +4,13 @@
     DJANGO Admin styles
 */
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
 /* VARIABLE DEFINITIONS */
 html[data-theme="light"],
 :root {
@@ -25,6 +32,8 @@ html[data-theme="light"],
     --header-tools-bg: #fafafa;
     --header-tools-hover-bg: #e5e5e5;
     --header-tools-fc: #212121;
+    --header-width: 300px;
+    --header-width-hidden: 60px;
 
     --breadcrumbs-fg: #c4dce8;
     --breadcrumbs-link-fg: var(--body-bg);
@@ -592,12 +601,6 @@ input[type=button][disabled].default {
     gap: 10px;
 }
 
-.app-auth.module {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-}
-
 @media (max-width: 380px) {
     .model-animal {
         justify-content: center;
@@ -906,16 +909,21 @@ a.deletelink:focus, a.deletelink:hover {
     top: 0px;
 }
 
+#main {
+    margin-left: var(--header-width);
+    transition: margin-left 0.3s ease;
+}
+
+body.header-hidden #main {
+    margin-left: var(--header-width-hidden);
+}
+
 #content {
     padding: 20px 40px;
 }
 
 .dashboard #content {
     width: 100%;
-}
-
-#content-main {
-    float: left;
 }
 
 #content-related {
@@ -933,11 +941,6 @@ a.deletelink:focus, a.deletelink:hover {
 
 /* COLUMN TYPES */
 
-
-.colSM #content-main {
-    float: right;
-}
-
 .popup .colM {
     width: auto;
 }
@@ -945,7 +948,9 @@ a.deletelink:focus, a.deletelink:hover {
 /* HEADER */
 
 #header {
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 300px;
     height: 100dvh;
     display: flex;
@@ -953,11 +958,11 @@ a.deletelink:focus, a.deletelink:hover {
     padding: 0px 10px;
     border-radius: 0px 15px 15px 0px;
     background: var(--header-bg);
-    transition: width 0.3s ease;
+    transition: all 0.3s ease;
 }
 
-#header.header-hidden {
-    width: 50px;
+body.header-hidden #header{
+    width: 75px;
 }
 
 .main-content-header {
@@ -968,7 +973,7 @@ a.deletelink:focus, a.deletelink:hover {
     width: 300px;
 }
 
-#header.header-hidden .main-content-header {
+body.header-hidden .main-content-header {
     width: 50px;
 }
 
@@ -979,7 +984,7 @@ a.deletelink:focus, a.deletelink:hover {
     transform: translateY(-50%);
     width: 25px;
     height: 25px;
-    background-color: var(--body-bg);
+    background-color: #fafafa;
     border: 2px solid var(--secondary);
     color: #000;
     border-radius: 50%;
@@ -1001,7 +1006,7 @@ a.deletelink:focus, a.deletelink:hover {
 }
 
 /* Gira só a imagem */
-#header.header-hidden .arrow-icon {
+body.header-hidden .arrow-icon {
     transform: rotate(180deg);
 }
 
@@ -1045,7 +1050,7 @@ a.deletelink:focus, a.deletelink:hover {
     color: var(--header-branding-color);
 }
 
-#header.header-hidden .site-text {
+body.header-hidden .site-text {
     opacity: 0;
     display: none;
 }
@@ -1092,7 +1097,7 @@ a.deletelink:focus, a.deletelink:hover {
     left: 50px;
 }
 
-#header.header-hidden .user-tools-text {
+body.header-hidden .user-tools-text {
     opacity: 0;
 }
 
@@ -1130,8 +1135,8 @@ a.deletelink:focus, a.deletelink:hover {
     transition: all 0.3s ease;
 }
 
-#header.header-hidden #user-tools a,
-#header.header-hidden #logout-form button {
+body.header-hidden #user-tools a,
+body.header-hidden #logout-form button {
     align-items: center;
     justify-content: center;
     min-width: 24px;
@@ -1312,4 +1317,24 @@ a.deletelink:focus, a.deletelink:hover {
     border: 0;
     color: var(--body-fg);
     background-color: var(--body-bg);
+}
+
+#content-main {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    gap: 50px;
+    /* outline: 1px solid violet; */
+}
+
+.tables-container {
+    /* outline: 1px solid red; */
+}
+
+.tables-cards {
+    display: flex;
+    max-width: 800px;
+    width: 100%;
+    background-color: var(--darkened-bg);
+    gap: 30px;
 }

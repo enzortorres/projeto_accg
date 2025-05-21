@@ -10,7 +10,9 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--bg-primary-color);
+    background-image: url("../../global/src/images/admin-bg.png");
+    background-position: center;
+    background-size: contain;
 }
 
 .login {
@@ -50,7 +52,12 @@ html {
     display: none !important;
 }
 
+.login #main {
+    margin-left: 0;
+}
+
 .login #header {
+    position: relative;
     height: auto;
     width: 100%;
     padding: 0px;
@@ -69,6 +76,7 @@ html {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 0;
 }
 
 #brading-line {

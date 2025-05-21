@@ -23,25 +23,11 @@ input[type="submit"], button {
 
     /* Layout */
 
-    #container {
-        min-width: 0;
-    }
-
-    #content {
-        padding: 15px 20px 20px;
-    }
-
     div.breadcrumbs {
         padding: 10px 30px;
     }
 
     /* Header */
-
-    #header {
-        flex-direction: column;
-        padding: 15px 30px;
-        justify-content: flex-start;
-    }
 
     #site-name {
         line-height: 1.2;
@@ -54,37 +40,7 @@ input[type="submit"], button {
         text-align: left;
     }
 
-
     /* Dashboard */
-
-    .dashboard #content {
-        width: auto;
-    }
-
-    #content-related {
-        margin-right: -290px;
-    }
-
-    .colSM #content-related {
-        margin-left: -290px;
-    }
-
-    .colMS {
-        margin-right: 290px;
-    }
-
-    .colSM {
-        margin-left: 290px;
-    }
-
-    .dashboard .module table td a {
-        padding-right: 0;
-    }
-
-    td .changelink, td .addlink {
-        font-size: 0.8125rem;
-    }
-
     /* Changelist */
 
     #toolbar {
@@ -382,8 +338,23 @@ input[type="submit"], button {
 @media (max-width: 767px) {
     /* Layout */
 
-    #header, #content {
-        padding: 15px;
+    #main {
+        width: 300px;
+    }
+
+    .model-actions {
+        flex-direction: column;
+    }
+
+    #content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #content-main {
+        max-width: 100vh;
+        justify-content: center;
+        align-items: center;
     }
 
     div.breadcrumbs {
