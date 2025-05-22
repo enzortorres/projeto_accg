@@ -10,7 +10,7 @@ original_each_context = admin.site.each_context
 
 def custom_each_context(request):
     context = original_each_context(request)
-    context['total'] = Animal.objects.count()
+    context['total_animal'] = Animal.objects.count()
     return context
 
 admin.site.each_context = custom_each_context

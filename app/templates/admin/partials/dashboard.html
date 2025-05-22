@@ -12,17 +12,15 @@
                                 </a>
                                 <div class="total-animais">
                                     <div class="total-count">
-                                        {{ total }}
+                                        {{ total_animal }}
                                     </div>
                                     <div class="total-text">
                                         disponíveis
                                     </div>
                                 </div>
-                            {% else %}
-                                {{ model.name }}
                             </div>
+                            {% endif %} 
                             <div class="card-container-right">
-                    {% endif %} 
                                 {% if model.add_url %}
                                     <div><a href="{{ model.add_url }}" class="addlink" aria-describedby="{{ app.app_label }}-{{ model_name }}">{% translate 'Add' %}</a></div>
                                 {% endif %}

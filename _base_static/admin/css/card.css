@@ -7,14 +7,30 @@
 .card-animal {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     width: 600px;
+}
+
+.card-container-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    
 }
 
 .total-animais {
     display: flex;
+    align-items: center;
     gap: 4px;
 }
 
 .total-count {
+    font-size: 32px;
+    font-weight: 300;
+    font-family: "Inter";
+}   
 
+.total-text {
+    font-size: 12px;
 }
