@@ -1,0 +1,20 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.card-animal {
+    display: flex;
+    flex-direction: row;
+    width: 600px;
+}
+
+.total-animais {
+    display: flex;
+    gap: 4px;
+}
+
+.total-count {
+
+}

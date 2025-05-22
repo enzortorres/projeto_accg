@@ -1042,6 +1042,8 @@ body.header-hidden .arrow-icon {
 
 #site-name {
     display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
     justify-content: start;
     align-items: center;
     text-align: left;
