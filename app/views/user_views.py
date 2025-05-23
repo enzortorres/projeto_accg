@@ -40,7 +40,7 @@ def apadrinhamento(request):
     return render(request, 'apadrinhamento.html', context=context)
 
 def animais(request):
-    animais = Animal.objects.all()
+    animais = Animal.objects.filter(disponivel=True)
     
     context = {
         'banner_title': 'Animais para adoção',

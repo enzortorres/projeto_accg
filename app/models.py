@@ -32,7 +32,8 @@ class Animal(models.Model):
     porte           = models.CharField(max_length=20, choices=PORTE_CHOICES)
     tipo            = models.CharField(max_length=20, choices=TIPO_CHOICES)
     data_nascimento = models.DateField()
-    descricao       = models.TextField(blank=True)  # deixei opcional para facilitar
+    descricao       = models.TextField(blank=True)
+    disponivel      = models.BooleanField(default=True)
     
     @property
     def idade(self):

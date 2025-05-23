@@ -5,15 +5,25 @@ from django import forms
 from datetime import date
 from app import models
 from .models import Animal
+from django.contrib.admin.models import LogEntry
+from django.forms.widgets import CheckboxInput
+from django.utils.safestring import mark_safe
 
 original_each_context = admin.site.each_context
 
 def custom_each_context(request):
     context = original_each_context(request)
-    context['total_animal'] = Animal.objects.count()
+    context['total_animal'] = Animal.objects.filter(disponivel=True).count()
+    context['total_actions'] = LogEntry.objects.count()
     return context
 
 admin.site.each_context = custom_each_context
+
+class CheckboxLabelBeforeInput(CheckboxInput):
+    def render(self, name, value, attrs=None, renderer=None):
+        checkbox_html = super().render(name, value, attrs, renderer)
+        label = self.attrs.get('label_text', '')
+        return mark_safe(f'<label style="display: flex; align-items: center; gap: 30px;">{label}{checkbox_html}</label>')
 
 class IdadeFilter(SimpleListFilter):
     title = 'idade'
@@ -56,10 +66,17 @@ class AnimalAdminForm(forms.ModelForm):
 
     class Meta:
         model = models.Animal
-        fields = ['nome', 'tipo', 'descricao']
+        fields = '__all__'
+        labels = {
+            'disponivel': ''
+        }
+        
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        self.fields['disponivel'].widget = CheckboxLabelBeforeInput(
+            attrs={'label_text': 'Disponível para adoção'}
+        )
 
         if self.instance and self.instance.pk and self.instance.data_nascimento:
             hoje = date.today()
@@ -103,13 +120,14 @@ class ResultadoTesteInline(admin.TabularInline):
 @admin.register(models.Animal)
 class AnimalAdmin(admin.ModelAdmin):
     form               = AnimalAdminForm
-    list_display       = ('id', 'nome', 'sexo', 'porte', 'tipo','foto_admin', 'idade')
+    list_display       = ('id', 'nome', 'sexo', 'porte', 'tipo','foto_admin', 'idade', 'disponivel')
     list_display_links = ('id', 'nome',)
-    list_filter        = ('tipo', 'sexo', 'porte',IdadeFilter,)
+    list_filter        = ('disponivel', 'tipo', 'sexo', 'porte', IdadeFilter,)
     list_per_page      = 10
     list_max_show_all  = 30
+    list_editable      = ('disponivel',)
     inlines            = [AnimalFotoInline, ResultadoTesteInline]
-    fields             = ('nome', 'sexo', 'tipo', 'porte', 'descricao', 'idade_anos', 'idade_meses')
+    fields             = ('nome', 'sexo', 'tipo', 'porte', 'descricao', 'idade_anos', 'idade_meses', 'disponivel',)
     ordering           = ('id',)
 
     def idade(self, obj):
@@ -133,3 +151,19 @@ class AnimalAdmin(admin.ModelAdmin):
     foto_admin.short_description = 'Foto'
     foto_admin.admin_order_field = 'fotos__imagem'  # permite ordenar por imagem
 
+class LogEntryAdmin(admin.ModelAdmin):
+    list_display = ['action_time', 'user', 'content_type', 'object_repr', 'action_flag']
+    readonly_fields = [f.name for f in LogEntry._meta.fields]
+    list_filter = ['user', 'content_type', 'action_flag']
+    date_hierarchy = 'action_time'
+    
+    def has_add_permission(self, request):
+        return False
+
+    def has_delete_permission(self, request, obj=None):
+        return False
+    
+    def has_change_permission(self, request, obj=None):
+        return False
+
+admin.site.register(LogEntry, LogEntryAdmin)

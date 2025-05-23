@@ -53,7 +53,9 @@ html {
 }
 
 .login #main {
+    display: block;
     margin-left: 0;
+    min-height: 0;
 }
 
 .login #header {

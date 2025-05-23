@@ -1,7 +1,7 @@
 {% load static i18n %}
 {% block content %}
     {% for app in app_list %}
-        {% if app.app_label != 'auth' %}
+        {% if app.app_label != 'auth' and app.name != 'Administração' %}
             {% for model in app.models %}
                 {% with model_name=model.object_name|lower %}
                     {% if model.admin_url %}
@@ -20,6 +20,7 @@
                                         {% else %}
                                             disponível
                                         {% endif %}
+                                        para adoção
                                     </div>
                                 </div>
                             </div>
@@ -33,6 +34,42 @@
                                         <div><a href="{{ model.admin_url }}" class="viewlink" aria-describedby="{{ app.app_label }}-{{ model_name }}">{% translate 'View' %}</a></div>
                                     {% else %}
                                         <div><a href="{{ model.admin_url }}" class="changelink" aria-describedby="{{ app.app_label }}-{{ model_name }}">{% translate 'Change' %}</a></div>
+                                    {% endif %}
+                                {% endif %}
+                            </div>
+                    </div>
+                {% endwith %}
+            {% endfor %}
+        {% endif %}
+    {% endfor %}
+    {% for app in app_list %}
+        {% if app.name == "Administração" %}
+            {% for model in app.models %}
+                {% with model_name=model.object_name|lower %}
+                    {% if model.admin_url %}
+                        <div class="module card-animal">
+                            <div class="card-container-left">
+                                <a href="{{ model.admin_url }}"{% if model.admin_url in request.path|urlencode %} aria-current="page"{% endif %}>
+                                    {{ model.name }}
+                                </a>
+                                <div class="total-animais">
+                                    <div class="total-count">
+                                        {{ total_actions }}
+                                    </div>
+                                    <div class="total-text">
+                                        {% if total_actions > 1%}
+                                            ações
+                                        {% else %}
+                                            ação
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                            {% endif %} 
+                            <div class="card-container-right">
+                                {% if model.admin_url and show_changelinks %}
+                                    {% if model.view_only %}
+                                        <div><a href="{{ model.admin_url }}" class="viewlink" aria-describedby="{{ app.app_label }}-{{ model_name }}">{% translate 'View' %}</a></div>
                                     {% endif %}
                                 {% endif %}
                             </div>

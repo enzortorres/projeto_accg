@@ -480,6 +480,10 @@ table thead th.sorted .sortoptions a.descending:hover {
 
 /* FORM DEFAULTS */
 
+.cancel-link {
+    min-height: 35px;
+}
+
 input, textarea, select, .form-row p, form .button {
     margin: 2px 0;
     padding: 2px 3px;
@@ -584,7 +588,7 @@ input[type=button][disabled].default {
     border-left: 3px solid var(--primary);
     padding: 10px;
     border-radius: 15px;
-    background: #fafafa;
+    background: var(--darkened-bg);
     gap: 30px;
 }
 
@@ -912,7 +916,7 @@ a.deletelink:focus, a.deletelink:hover {
 }
 
 #main {
-    min-width: 900px;
+    min-width: 1000px;
     margin-left: var(--header-width);
     transition: margin-left 0.3s ease;
 }
@@ -950,6 +954,11 @@ body.header-hidden #main {
 
 .popup .colM {
     width: auto;
+}
+
+.colMS #content-main {
+    display: flex;
+    flex-direction: column;
 }
 
 /* HEADER */
@@ -1335,12 +1344,6 @@ body.header-hidden #logout-form button {
     display: flex;
     flex-wrap: wrap;
     max-width: 1200px;
-    gap: 50px;
-    /* outline: 1px solid violet; */
-}
-
-.tables-container {
-    /* outline: 1px solid red; */
 }
 
 .tables-cards {

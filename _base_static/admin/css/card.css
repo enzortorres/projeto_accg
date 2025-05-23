@@ -9,6 +9,7 @@
     flex-direction: row;
     justify-content: space-between;
     padding: 20px 30px;
+    background-color: var(--darkened-bg);
     box-shadow: 3px 3px 10px rgba(0, 0, 0, .1);
     width: 600px;
     gap: 0;
@@ -19,6 +20,11 @@
     display: flex;
     flex-direction: column;
     gap: 30px;
+}
+
+.card-container-left a {
+    font-size: 24px;
+    color: var(--primary);
 }
 
 .card-container-right {
@@ -33,6 +39,7 @@
     display: flex;
     align-items: end;
     gap: 4px;
+    color: var(--body-fg);
 }
 
 .total-count {
