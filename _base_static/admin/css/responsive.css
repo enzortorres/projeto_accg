@@ -170,6 +170,21 @@ input[type="submit"], button {
         padding-top: 6px;
     }
 
+    .aligned .form-row input,
+    .aligned .form-row select,
+    .aligned .form-row textarea {
+        flex: 1 1 auto;
+        max-width: 100%;
+    }
+
+    .vTextField {
+        width: 100%;
+    }
+
+    .aligned .form-row > div {
+        width: 100%;
+    }
+
     .aligned .related-lookup,
     .aligned .datetimeshortcuts,
     .aligned .related-lookup + strong {
@@ -336,6 +351,8 @@ input[type="submit"], button {
 /* Mobile */
 
 @media (max-width: 767px) {
+
+    
     /* Layout */
 
     #main {
@@ -343,11 +360,6 @@ input[type="submit"], button {
     }
 
     .model-actions {
-        flex-direction: column;
-    }
-
-    #content {
-        display: flex;
         flex-direction: column;
     }
 
@@ -383,13 +395,12 @@ input[type="submit"], button {
 
     /* Changelist */
 
-    #changelist {
-        align-items: stretch;
-        flex-direction: column;
-    }
-
     #toolbar {
         padding: 10px;
+    }
+
+    #changelist {
+        width: 500px;
     }
 
     #changelist-filter {
@@ -412,7 +423,6 @@ input[type="submit"], button {
     #changelist-filter {
         position: static;
         width: auto;
-        border: 1px solid black;
         margin-top: 30px;
     }
 
@@ -432,24 +442,16 @@ input[type="submit"], button {
         margin-left: 15px;
     }
 
-    .object-tools:has(a.addlink) {
-        margin-top: 0px;
-    }
-
     /* Forms */
 
     .form-row {
         padding: 15px 0;
     }
 
-    .aligned .form-row,
+    /* .aligned .form-row,
     .aligned .form-row > div {
         max-width: 100vw;
-    }
-
-    .aligned .form-row > div {
-        width: calc(100vw - 30px);
-    }
+    } */
 
     .flex-container {
         flex-flow: column;
@@ -874,8 +876,106 @@ input[type="submit"], button {
     }
 }
 
+@media (max-width: 1185px) {
+    fieldset.module {
+        width: 700px;
+    }
+}
+
+@media (max-width: 970px) {
+    .object-tools:has(a.addlink) {
+        margin-top: 0px;
+    }
+
+    .object-tools {
+        margin: 0 0 30px;
+    }
+
+    #content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #changelist {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    #changelist-filter {
+        overflow-y: scroll;
+    }
+}
+
 @media (max-width: 930px) {
+
+    .changelist-form-container {
+        overflow-x: auto;
+    }
+
     #content-related {
         position: static;
+    }
+
+    /* Formulário de adicionar animais */
+
+    fieldset.module {
+        width: 500px;
+    }
+
+    .flex-container {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 640px) {
+    #changelist {
+        width: 350px;
+    }
+
+    .column-imagem {
+        max-width: 100px;
+        min-width: 0;
+    }
+
+    fieldset.module {
+        width: 300px;
+    }
+}
+
+@media (max-width: 470px) {
+    #content-main {
+        position: relative;
+    }
+
+    #changelist {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 250px;
+    }
+}
+
+@media (max-width: 420px) {
+    #changelist {
+        width: 230px;
+    }
+
+    fieldset.module {
+        width: 230px;
+    }
+
+}
+
+@media (max-width: 381px) {
+    #content.colM {
+        position: absolute;
+        top: 0px;
+        left: 65px;
+    }
+}
+
+@media (max-width: 321px) {
+    #content.colM {
+        left: 45px;
     }
 }

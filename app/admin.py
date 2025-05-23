@@ -106,6 +106,8 @@ class AnimalAdmin(admin.ModelAdmin):
     list_display       = ('id', 'nome', 'sexo', 'porte', 'tipo','foto_admin', 'idade')
     list_display_links = ('id', 'nome',)
     list_filter        = ('tipo', 'sexo', 'porte',IdadeFilter,)
+    list_per_page      = 10
+    list_max_show_all  = 30
     inlines            = [AnimalFotoInline, ResultadoTesteInline]
     fields             = ('nome', 'sexo', 'tipo', 'porte', 'descricao', 'idade_anos', 'idade_meses')
     ordering           = ('id',)

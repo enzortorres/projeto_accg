@@ -912,6 +912,7 @@ a.deletelink:focus, a.deletelink:hover {
 }
 
 #main {
+    min-width: 900px;
     margin-left: var(--header-width);
     transition: margin-left 0.3s ease;
 }
@@ -965,6 +966,7 @@ body.header-hidden #main {
     border-radius: 0px 15px 15px 0px;
     background: var(--header-bg);
     transition: all 0.3s ease;
+    z-index: 99999;
 }
 
 body.header-hidden #header{
@@ -1009,11 +1011,12 @@ body.header-hidden .main-content-header {
     background-size: contain;
     background-repeat: no-repeat;
     transition: transform 0.5s ease;
+    transform: rotate(180deg);
 }
 
 /* Gira só a imagem */
 body.header-hidden .arrow-icon {
-    transform: rotate(180deg);
+    transform: rotate(0deg);
 }
 
 #header a:link {

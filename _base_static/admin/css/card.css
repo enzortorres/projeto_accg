@@ -67,7 +67,7 @@
 }
 
 @media (max-width: 370px) {
-    .module {
-        width: 200px;
+    .colMS.module {
+        width: 230px;
     }
 }

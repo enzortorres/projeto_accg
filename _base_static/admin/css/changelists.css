@@ -41,6 +41,9 @@
     width: 100%;
 }
 
+#changelist-form-container {
+}
+
 #changelist .toplinks {
     border-bottom: 1px solid var(--hairline-color);
 }
@@ -134,9 +137,8 @@
 /* FILTER COLUMN */
 
 #changelist-filter {
-    flex: 0 0 240px;
+    flex: 0 0 200px;
     order: 1;
-    margin: 0 0 0 30px;
     border: 1px solid var(--border-color);
     border-radius: 10px;
     overflow: hidden;

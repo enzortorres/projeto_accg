@@ -48,7 +48,7 @@
 {% endblock %}
 
 {% block content %}
-  <div id="content-main">
+  <div id="content-main" class="change-list-content">
     {% if cl.formset and cl.formset.errors %}
         <p class="errornote">
         {% blocktranslate count counter=cl.formset.total_error_count %}Please correct the error below.{% plural %}Please correct the errors below.{% endblocktranslate %}

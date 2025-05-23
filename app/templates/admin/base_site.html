@@ -5,7 +5,7 @@
 
 {% block branding %}
     <div id="site-name">
-        <img src="{% static 'global/src/icons/logo1.png' %}" class="logo-accg">
+        <a href="{% url 'admin:index' %}"><img src="{% static 'global/src/icons/logo1.png' %}" class="logo-accg"></a>
         <a href="{% url 'admin:index' %}" class="site-text">Painel Administrativo</a>
     </div>
 {% endblock %}

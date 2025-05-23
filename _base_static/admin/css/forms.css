@@ -496,3 +496,14 @@ form .related-widget-wrapper ul {
 .clearable-file-input input {
     margin-top: 0;
 }
+
+.aligned .form-row input,
+.aligned .form-row select,
+.aligned .form-row textarea {
+    flex: 1 1 auto;
+    max-width: 100%;
+}
+
+.field-imagem {
+    max-width: 200px;
+}
