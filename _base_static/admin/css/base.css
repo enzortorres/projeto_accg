@@ -97,6 +97,7 @@ html[data-theme="light"],
 
 html, body {
     height: 100%;
+    overflow-x: hidden;
 }
 
 body {
@@ -788,6 +789,7 @@ div.breadcrumbs a:focus, div.breadcrumbs a:hover {
 }
 
 .deletelink {
+    min-height: 35px;
     padding-left: 16px;
     background: url(../img/icon-deletelink.svg) 0 1px no-repeat;
 }
@@ -880,7 +882,6 @@ a.deletelink:focus, a.deletelink:hover {
 /* PAGE STRUCTURE */
 
 #container {
-    position: relative;
     width: 100dvh;
     min-width: 980px;
     display: flex;
@@ -888,6 +889,7 @@ a.deletelink:focus, a.deletelink:hover {
 }
 
 #container > .main {
+    width: 100%;
     display: flex;
 }
 
@@ -927,10 +929,14 @@ body.header-hidden #main {
 }
 
 #content-related {
+    position: absolute;
+    top: 63px;
+    left: 80%;
     height: fit-content;
     float: right;
     min-width: 150px;
     max-width: 260px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
 }
 
 @media (forced-colors: active) {
@@ -1038,6 +1044,7 @@ body.header-hidden .arrow-icon {
 .logo-accg {
     width: 75px;
     height: 75px;
+    object-fit: contain;
 }
 
 #site-name {

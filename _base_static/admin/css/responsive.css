@@ -873,3 +873,9 @@ input[type="submit"], button {
         word-break: break-word;
     }
 }
+
+@media (max-width: 930px) {
+    #content-related {
+        position: static;
+    }
+}

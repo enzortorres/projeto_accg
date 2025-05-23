@@ -15,7 +15,11 @@
                                         {{ total_animal }}
                                     </div>
                                     <div class="total-text">
-                                        disponíveis
+                                        {% if total_animal > 1%}
+                                            disponíveis
+                                        {% else %}
+                                            disponível
+                                        {% endif %}
                                     </div>
                                 </div>
                             </div>
@@ -38,3 +42,5 @@
         {% endif %}
     {% endfor %}
 {% endblock %}
+
+

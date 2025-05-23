@@ -32,15 +32,33 @@ header {
 
 .logos {
     display: flex;
-    gap: 10px;
-    width: 100px;
+    position: relative;
+    width: 200px;
+    height: 100%;
+}
+
+.logo1 {
+    width: 50%;
+    height: 100%;
+    background-image: url("../../src/icons/logo1.png");visibility: s;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.logo2 {
+    width: 50%;
+    height: 100%;
+    background-image: url("../../src/icons/logo2.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
 }
 
 .links {
     position: relative;
     display: flex;
     justify-content: center;
-    transition: right 0.3s ease-in-out
 }
 
 .links-ancoras {
@@ -63,8 +81,9 @@ header {
 
 .osso-icon {
     position: absolute;
-    bottom: -45px;
-    right: 0px;
+    transform: scale(1.7);
+    bottom: -20px;
+    right: 35px;
 }
 
 @media (max-width: 1150px) {
@@ -116,8 +135,8 @@ header {
         top: 0px;
         right: 0px;
         z-index: 1000;
+        transition: right 0.3s ease-in-out;
     }   
-
 
     .close-menu {
         display: block;
