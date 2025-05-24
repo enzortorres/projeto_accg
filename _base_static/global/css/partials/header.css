@@ -12,6 +12,7 @@
     list-style: none;
     box-sizing: border-box;
     font-family: "M PLUS Rounded 1c", sans-serif;
+    scroll-behavior: smooth;
 }
 
 header {
@@ -40,7 +41,7 @@ header {
 .logo1 {
     width: 50%;
     height: 100%;
-    background-image: url("../../src/icons/logo1.png");visibility: s;
+    background-image: url("../../src/icons/logo1.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -49,7 +50,7 @@ header {
 .logo2 {
     width: 50%;
     height: 100%;
-    background-image: url("../../src/icons/logo2.png");
+    background-image: url("../../src/icons/accg-name.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;

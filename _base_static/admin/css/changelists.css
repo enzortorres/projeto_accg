@@ -41,9 +41,6 @@
     width: 100%;
 }
 
-#changelist-form-container {
-}
-
 #changelist .toplinks {
     border-bottom: 1px solid var(--hairline-color);
 }

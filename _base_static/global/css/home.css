@@ -160,7 +160,7 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    margin-top: 70px;
+    padding-top: 70px;
     gap: 1rem;
     margin-bottom: 7rem;
     position: relative;
