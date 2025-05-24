@@ -17,137 +17,26 @@
                 </div>
             </div>
         </div>
-        <div id="overlay"></div>
-        <div class="filter">
-            <div class="filter-heading">
-                <p>Filtrar e ordenar</p>
-                <div class="close-filter"></div>
-            </div>
-            <div class="filters-dropdown">
-                <div class="filter-dropdown">
-                    <p class="filter-dropdown-click">
-                        Animais
-                        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M16 24L32 40L48 24" stroke="#333" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </p>
-                    <div class="checkbox-container">
-                        <label class="checkbox-wrapper">
-                            <input type="checkbox" name="filter" value="cachorros" class="filter-checkbox">
-                            <span class="checkmark">Cachorros</span>
-                        </label>
-                        <label class="checkbox-wrapper">
-                            <input type="checkbox" name="filter" value="gatos" class="filter-checkbox">
-                            <span class="checkmark">Gatos</span>
-                        </label>
-                    </div>
-                </div>
-                <div class="filter-dropdown">
-                    <p class="filter-dropdown-click">
-                        Porte
-                        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M16 24L32 40L48 24" stroke="#333" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </p>
-                    <div class="checkbox-container">
-                        <label class="checkbox-wrapper">
-                            <input type="checkbox" name="filter" value="pequeno" class="filter-checkbox">
-                            <span class="checkmark">Pequeno</span>
-                        </label>
-                        <label class="checkbox-wrapper">
-                            <input type="checkbox" name="filter" value="medio" class="filter-checkbox">
-                            <span class="checkmark">Médio</span>
-                        </label>
-                        <label class="checkbox-wrapper">
-                            <input type="checkbox" name="filter" value="grande" class="filter-checkbox">
-                            <span class="checkmark">Grande</span>
-                        </label>
-                    </div>
-                </div>
-                <div class="filter-dropdown">
-                    <p class="filter-dropdown-click">
-                        Sexo
-                        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M16 24L32 40L48 24" stroke="#333" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </p>
-                    <div class="checkbox-container">
-                        <label class="checkbox-wrapper">
-                            <input type="checkbox" name="filter" value="macho" class="filter-checkbox">
-                            <span class="checkmark">Macho</span>
-                        </label>
-                        <label class="checkbox-wrapper">
-                            <input type="checkbox" name="filter" value="femea" class="filter-checkbox">
-                            <span class="checkmark">Fêmea</span>
-                        </label>
-                    </div>
-                </div>
-                <div class="filter-dropdown">
-                    <p class="filter-dropdown-click">
-                        Faixa de idade
-                        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M16 24L32 40L48 24" stroke="#333" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
 
-                    </p>
-                    <div class="checkbox-container">
-                        <label class="checkbox-wrapper idade">
-                            <input type="checkbox" name="filter" value="menos1ano" class="filter-checkbox">
-                            <span class="checkmark">Menos de 1 ano</span>
-                        </label>
-                        <label class="checkbox-wrapper idade">
-                            <input type="checkbox" name="filter" value="1a3anos" class="filter-checkbox">
-                            <span class="checkmark">1 a 3 anos</span>
-                        </label>
-                        <label class="checkbox-wrapper idade">
-                            <input type="checkbox" name="filter" value="4a6anos" class="filter-checkbox">
-                            <span class="checkmark">4 a 6 anos</span>
-                        </label>
-                        <label class="checkbox-wrapper idade">
-                            <input type="checkbox" name="filter" value="7oumais" class="filter-checkbox">
-                            <span class="checkmark">7 anos ou mais</span>
-                        </label>
-                    </div>
-                </div>
+        {% include "includes/filter.html" %}
 
-            </div>
-            <div class="reset-container">
-                <button class="reset">Limpar filtros</button>
-            </div>
-        </div>
-        <section class="animais">
-            {% if animais %}
-                {% for animal in animais %}
-                <div class="animal">
-                    {% if animal.fotos.all %}
-                    <img src="{{ animal.fotos.first.imagem.url }}" class="animal-foto">
-                    {% endif %}
-                    <h3 class="animal-nome">{{ animal.nome }}</h3>
-                    <div class="animal-dados">
-                        <div class="animal-porte">
-                            <p>Porte {{ animal.get_porte_display }}</p>
-                        </div>
-                        <div class="animal-resumo">
-                            <div class="animal-sexo">
-                                {% if animal.sexo == 'macho' %}
-                                    <p><img src="{% static 'global/src/icons/male.png' %}" alt="" class="sexo-icon"> {{ animal.get_sexo_display }}</p>
-                                {% else %}
-                                    <p><img src="{% static 'global/src/icons/female.png' %}" alt="" class="sexo-icon"> {{ animal.get_sexo_display }}</p>
-                                {% endif %}
-                            </div>
-                            <div class="animal-idade">
-                                <p class="idade-text"><img src="{% static 'global/src/icons/clock-icon.png' %}" class="clock-icon"> {{ animal.idade }}</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
-            {% else %}
-                <h1>Nenhum animal disponível.</h1>
-            {% endif %}
+        <section class="animais" id="animais-container">
+            {% include "includes/animal_cards.html" %}
         </section>
+
+        {% if page_obj.has_next %}
+            <div class="ver-mais-container">
+                <button id="ver-mais-btn"
+                        data-next-page="{{ page_obj.next_page_number }}"
+                        data-total-pages="{{ page_obj.paginator.num_pages }}">
+                    Ver mais
+                </button>
+            </div>
+        {% endif %}
     </main>
+
     <script src="{% static 'global/js/filter-open.js' %}"></script>
     <script src="{% static 'global/js/filter-options-open.js' %}"></script>
     <script src="{% static 'global/js/filter-count.js' %}"></script>
+    <script src="{% static 'global/js/load-more.js' %}"></script>
 {% endblock content %}

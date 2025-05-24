@@ -90,6 +90,21 @@
     gap: 5px;
 }
 
+#ver-mais-btn {
+    background-color: var(--bg-primary-color);
+    color: var(--font-primary-color);
+    font-size: 20px;
+    border: 0;
+    border-radius: 25px;
+    padding: 10px 30px;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+#ver-mais-btn:hover {
+    background-color: var(--bg-header-color);
+}
+
 .idade-text {
     display: flex;
     align-items: start;

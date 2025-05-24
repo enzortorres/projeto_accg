@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.core.paginator import Paginator
 from ..models import Animal
 
 # Create your views here.
@@ -41,15 +42,21 @@ def apadrinhamento(request):
 
 def animais(request):
     animais = Animal.objects.filter(disponivel=True)
-    
+    paginator = Paginator(animais, 8)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
     context = {
         'banner_title': 'Animais para adoção',
         'banner_subtitle': 'Todos os animais merecem um lar cheio de amor e carinho.',
         'banner_imagem': 'global/src/images/banner-animais.png',
-        'animais': animais,
+        'page_obj': page_obj,
     }
+
+    if request.headers.get('x-requested-with') == 'XMLHttpRequest':
+        return render(request, 'includes/animal_cards.html', context)
     
-    return render(request, 'animais.html', context=context)
+    return render(request, 'animais.html', context)
 
 def sobre(request):
     context = {
