@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=M+PLUS+Rounded+1c&family=Varela+Round&display=swap');
+
+:root {
+    --bg-primary-color: #7291CA;
+    --bg-header-color: #4D6FAD;
+
+    --bg-banner-button-color: #F0AC03;
+    --bg-banner-button-hover-color: #dfa615;
+
+    --bg-filter-color: #FAFAFA;
+    --bg-filter-border-color: #CECECE;
+    --bg-filter-checkbox-color: #F7F7F7;
+
+    --bg-card-color: #F6F6F6;
+    --bg-thumbnail-color: #dedede;
+
+    --font-primary-color: #FAFAFA;
+    --font-secondary-color: #7291CA;
+    --font-dark-color: #000;
+    --font-light-color: #919191;
+    --font-filter-checkbox-color: #5C5C5C;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100dvw;
+    height: calc(375px + 246px) ;
+}
+
+.animal-card {
+    display: flex;
+    padding: 20px;
+    background-color: var(--bg-card-color);
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    gap: 40px;
+}
+
+.left-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-image {
+    width: 250px;
+    height: 250px;
+    object-fit: contain;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    box-shadow: 2px 3px 5px rgba(0,0,0,0.2);
+}
+
+.thumbnail-container {
+    display: flex;
+    gap: 8px;
+    background-color: var(--bg-thumbnail-color);
+    border-radius: 10px;
+    width: 250px;
+    max-width: 250px;
+    overflow-x: auto;
+}
+
+.thumbnail {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    cursor: pointer;
+    border: 2px solid transparent;
+    border-radius: 5px;
+}
+
+.thumbnail:hover {
+    border-color: #7291CA;
+}
+
+.active-thumbnail {
+    filter: brightness(0.6);
+}
+
+.right-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 10px;
+    font-family: 'Varela Round', sans-serif;
+    max-width: 500px;
+}
+
+.right-column h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.animal-sexo p{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}

@@ -15,7 +15,9 @@
 
 <body>
     {% include "partials/header.html" %}
-    {% include "partials/banner.html" %}
+    {% if banner_title %}
+        {% include "partials/banner.html" %}
+    {% endif %}
 
     {% block content %}{% endblock content %}
 

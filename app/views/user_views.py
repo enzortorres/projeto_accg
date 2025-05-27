@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 from django.core.paginator import Paginator
 from ..models import Animal
 
@@ -57,6 +57,22 @@ def animais(request):
         return render(request, 'includes/animal_cards.html', context)
     
     return render(request, 'animais.html', context)
+
+def animal(request, animal_id):
+    single_animal = get_object_or_404(
+        Animal,
+        pk=animal_id,
+        disponivel=True,
+    )
+
+    fotos = single_animal.fotos.all()
+
+    context = {
+        'animal': single_animal,
+        'fotos': fotos,
+    }
+
+    return render(request, 'unique_animal.html', context)
 
 def sobre(request):
     context = {

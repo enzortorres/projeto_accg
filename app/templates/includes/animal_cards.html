@@ -2,27 +2,29 @@
 {% if page_obj %}
     {% for animal in page_obj %}
         <div class="animal">
-            {% if animal.fotos.all %}
-                <img src="{{ animal.fotos.first.imagem.url }}" class="animal-foto">
-            {% endif %}
-            <h3 class="animal-nome">{{ animal.nome }}</h3>
-            <div class="animal-dados">
-                <div class="animal-porte">
-                    <p>Porte {{ animal.get_porte_display }}</p>
-                </div>
-                <div class="animal-resumo">
-                    <div class="animal-sexo">
-                        {% if animal.sexo == 'macho' %}
-                            <p><img src="{% static 'global/src/icons/male.png' %}" class="sexo-icon"> {{ animal.get_sexo_display }}</p>
-                        {% else %}
-                            <p><img src="{% static 'global/src/icons/female.png' %}" class="sexo-icon"> {{ animal.get_sexo_display }}</p>
-                        {% endif %}
+            <a href="{% url "app:animal" animal.id %}" class="unique-animal-anchor">
+                {% if animal.fotos.all %}
+                    <img src="{{ animal.fotos.first.imagem.url }}" class="animal-foto">
+                {% endif %}
+                <h3 class="animal-nome">{{ animal.nome }}</h3>
+                <div class="animal-dados">
+                    <div class="animal-porte">
+                        <p>Porte {{ animal.get_porte_display }}</p>
                     </div>
-                    <div class="animal-idade">
-                        <p class="idade-text"><img src="{% static 'global/src/icons/clock-icon.png' %}" class="clock-icon"> {{ animal.idade }}</p>
+                    <div class="animal-resumo">
+                        <div class="animal-sexo">
+                            {% if animal.sexo == 'macho' %}
+                                <p><img src="{% static 'global/src/icons/male.png' %}" class="sexo-icon"> {{ animal.get_sexo_display }}</p>
+                            {% else %}
+                                <p><img src="{% static 'global/src/icons/female.png' %}" class="sexo-icon"> {{ animal.get_sexo_display }}</p>
+                            {% endif %}
+                        </div>
+                        <div class="animal-idade">
+                            <p class="idade-text"><img src="{% static 'global/src/icons/clock-icon.png' %}" class="clock-icon"> {{ animal.idade }}</p>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </a>
         </div>
     {% endfor %}
 {% else %}

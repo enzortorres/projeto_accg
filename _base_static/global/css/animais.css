@@ -53,6 +53,7 @@
     background: #F6F6F6;
     padding: 10px;
     border-radius: 20px;
+    transition: transform 0.3s ease;
 }
 
 .animal-foto {
@@ -88,6 +89,10 @@
     flex-direction: row;
     align-items: center;
     gap: 5px;
+}
+
+.unique-animal-anchor {
+    text-decoration: none;
 }
 
 #ver-mais-btn {
