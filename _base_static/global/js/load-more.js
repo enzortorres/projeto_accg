@@ -9,10 +9,15 @@ document.addEventListener('DOMContentLoaded', function () {
         btn.disabled = true;
         btn.innerText = "Carregando...";
 
-        const response = await fetch(`?page=${nextPage}`, {
-            headers: {
-                'X-Requested-With': 'XMLHttpRequest'
-            }
+        const filtros = btn.dataset.filtros;
+        const url = new URL(window.location.href);
+        url.searchParams.set('page', nextPage);
+        if (filtros) {
+            url.searchParams.set('filtros', filtros);
+        }
+
+        const response = await fetch(url.toString(), {
+            headers: { 'X-Requested-With': 'XMLHttpRequest' }
         });
 
         if (response.ok) {

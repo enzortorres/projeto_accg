@@ -24,19 +24,23 @@
             {% include "includes/animal_cards.html" %}
         </section>
 
-        {% if page_obj.has_next %}
+        {% if not filtros and page_obj.has_next %}
             <div class="ver-mais-container">
                 <button id="ver-mais-btn"
                         data-next-page="{{ page_obj.next_page_number }}"
-                        data-total-pages="{{ page_obj.paginator.num_pages }}">
+                        data-total-pages="{{ page_obj.paginator.num_pages }}"
+                        data-filtros="">
                     Ver mais
                 </button>
             </div>
         {% endif %}
+
     </main>
 
+    <script src="{% static 'global/js/filter.js' %}"></script>
     <script src="{% static 'global/js/filter-open.js' %}"></script>
-    <script src="{% static 'global/js/filter-options-open.js' %}"></script>
     <script src="{% static 'global/js/filter-count.js' %}"></script>
+    <script src="{% static 'global/js/filter-options-open.js' %}"></script>
+
     <script src="{% static 'global/js/load-more.js' %}"></script>
 {% endblock content %}
