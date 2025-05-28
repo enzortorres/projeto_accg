@@ -364,6 +364,10 @@ body.popup .submit-row {
 
 /* INLINES */
 
+.header_form {
+    background-color: var(--secondary);
+}
+
 .inline-group {
     padding: 0;
     margin: 0 0 30px;

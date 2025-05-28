@@ -1,6 +1,4 @@
 from django.shortcuts import get_object_or_404, render
-from django.http import JsonResponse
-from django.template.loader import render_to_string
 from django.db.models import Q
 from django.core.paginator import Paginator
 
@@ -45,8 +43,6 @@ def apadrinhamento(request):
     }
     
     return render(request, 'apadrinhamento.html', context=context)
-
-from django.db.models import Q
 
 def animais(request):
     hoje = date.today()
