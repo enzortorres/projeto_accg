@@ -11,7 +11,6 @@
     margin: 0;
     list-style: none;
     box-sizing: border-box;
-    font-family: "M PLUS Rounded 1c", sans-serif;
     scroll-behavior: smooth;
 }
 
@@ -21,6 +20,7 @@ header {
     background-color: var(--bg-header-color);
     display: flex;
     justify-content: center;
+    font-family: "M PLUS Rounded 1c", sans-serif;
 }
 
 .container {

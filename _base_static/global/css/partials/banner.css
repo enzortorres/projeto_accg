@@ -15,7 +15,7 @@
     padding: 50px 72px 0px 72px;
 }
 
-img{
+img {
     max-inline-size: 100%;
 }
 
@@ -31,10 +31,11 @@ img{
     display: flex;
     flex-direction: column;
     gap: 30px;
+    font-size: 20px;
 }
 
 .banner-title {
-    font-size: 32px;
+    font-size: 36px;
 }
 
 .banner-button {
@@ -49,4 +50,10 @@ img{
     border-radius: 120px;
     width: 150px;
     height: 40px;
+}
+
+@media (max-width: 436px) {
+    .banner {
+        padding: 20px;
+    }
 }

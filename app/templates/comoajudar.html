@@ -30,6 +30,28 @@
                 <a href="{% url 'app:apadrinhamento' %}" class="btn-switch apadrinhe-btn">Clique Aqui</a>
             </div>
         </div>
+        
+        <div class="container-mobile">
+            <div class="mobile-info">
+                <div class="element-info opcao1"></div>
+                <h2>DOE PARA UM PET</h2>
+                <p>Sua doação vira ração, vacinas e muito amor.</p>
+                <a href="{% url 'app:doacao' %}" class="btn-switch doe-btn">Clique Aqui</a>
+            </div>
+            <div class="mobile-info">
+                <div class="element-info opcao2"></div>
+                <h2>ADOTE</h2>
+                <p>Quer um amigo, ou um novo membro na família ?</p>
+                <p>Adote um pet.</p>
+                <a href="{% url 'app:adotar' %}" class="btn-switch adote-btn">Clique Aqui</a>
+            </div>
+            <div class="mobile-info">
+                <div class="element-info opcao3"></div>
+                <h2>APADRINHE UM PET</h2>
+                <p>Contribue mensalmente para o bem-estar de um pet.</p>
+                <a href="{% url 'app:apadrinhamento' %}" class="btn-switch apadrinhe-btn">Clique Aqui</a>
+            </div>
+        </div>
     </main>
     <script src="{% static 'global/js/switch-como-ajudar.js' %}"></script>
 {% endblock content %}

@@ -21,7 +21,6 @@ function updateContent(index) {
         if (idx === index) {
             content.classList.remove('hidden');
 
-            // Garante que a animação é reativada mesmo se for o mesmo elemento
             setTimeout(() => {
                 content.classList.add('fade-in');
             }, 10);

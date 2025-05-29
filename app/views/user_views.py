@@ -134,8 +134,8 @@ def sobre(request):
 
 def como_ajudar(request):
     context = {
-        'banner_title': 'A adoção muda duas vidas: a deles e a sua.',
-        'banner_subtitle': 'Um novo começo para ambos',
+        'banner_title': 'Como ajudar?',
+        'banner_subtitle': 'Toda ajuda é bem-vinda! Procure formas de tranformar a vida de um pet.',
         'banner_imagem': 'global/src/images/banner-como-ajudar.png',
         'banner_button_text': 'Adotar',
     }
