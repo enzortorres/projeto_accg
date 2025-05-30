@@ -47,6 +47,8 @@
                     {% if has_permission %}
                     <div id="user-tools">
                         {% block userlinks %}
+                        <a href="{% url 'admin:index' %}"><img src="{% static 'global/src/icons/home-icon.png' %}" class="user-tools-icons"><div class="user-tools-text">Início</div></a>
+
                             {% if site_url %}
                                 <a href="{{ site_url }}"><img src="{% static 'global/src/icons/site-www.png' %}" class="user-tools-icons"><div class="user-tools-text">{% translate 'View site' %}</div></a>
                             {% endif %}

@@ -1,3 +1,25 @@
+:root {
+    --bg-primary-color: #7291CA;
+    --bg-header-color: #4D6FAD;
+    --bg-body-color: #F6F6F6;
+
+    --bg-banner-button-color: #F0AC03;
+    --bg-banner-button-hover-color: #dfa615;
+
+    --bg-filter-color: #FAFAFA;
+    --bg-filter-border-color: #CECECE;
+    --bg-filter-checkbox-color: #F7F7F7;
+
+    --bg-card-color: #FFFFFF;
+    --bg-thumbnail-color: #dedede;
+
+    --font-primary-color: #FAFAFA;
+    --font-secondary-color: #7291CA;
+    --font-dark-color: #000;
+    --font-light-color: #919191;
+    --font-filter-checkbox-color: #5C5C5C;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -7,4 +29,5 @@
 
 body {
     overflow-x: hidden;
+    background-color: var(--bg-body-color);
 }

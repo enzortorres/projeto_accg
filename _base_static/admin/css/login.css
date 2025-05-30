@@ -13,6 +13,7 @@ html {
     background-image: url("../../global/src/images/admin-bg.png");
     background-position: center;
     background-size: contain;
+    overflow-x: visible !important;
 }
 
 .login {
@@ -63,7 +64,7 @@ html {
     height: auto;
     width: 100%;
     padding: 0px;
-    border-radius: 0;
+    border-radius: 4px 4px 0px 0px;
     justify-content: center;
     background-color: var(--bg-header-color);
 }
@@ -105,9 +106,8 @@ html {
 
 .login #container {
     background: var(--body-bg);
-    border: 1px solid var(--hairline-color);
-    border-radius: 4px;
-    overflow: hidden;
+    box-shadow: -2px 2px 10px rgba(0, 0, 0, .2);
+    border-radius: 4px; 
     width: 28em;
     min-width: 300px;
     margin: 100px auto;
@@ -141,4 +141,16 @@ html {
 
 .login .password-reset-link {
     text-align: center;
+}
+
+@media (max-width: 381px) {
+    #content.colM {
+        position: static !important;
+    }
+}
+
+@media (max-width: 1370px) {
+    html {
+        background-size: cover;
+    }
 }

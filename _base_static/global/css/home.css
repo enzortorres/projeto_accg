@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 
 
 .section_inicio_home {
@@ -15,6 +17,7 @@
     align-items: center;
     justify-content: space-between;
     width: 1000px;
+    font-family: "Montserrat";
 }
 
 .elementos_informacoes {
@@ -28,6 +31,7 @@
 .elementos_informacoes h1 {
     font-weight: 800;
     /* font-family: "Inter", sans-serif; */
+    font-size: 22px;
     letter-spacing: 1.5px;
     color: #303030;
     padding-top: 10px;

@@ -2,21 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap');
 
-:root {
-    --bg-primary-color: #7291CA;
-    --bg-header-color: #4D6FAD;
-    --bg-banner-button-color: #F0AC03;
-    --bg-banner-button-hover-color: #dfa615;
-    --font-primary-color: #FAFAFA;
-}
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     list-style: none;
-     font-family: "M PLUS Rounded 1c", sans-serif;
-   
+    font-family: "M PLUS Rounded 1c", sans-serif;
 }
 
 .conteudo {

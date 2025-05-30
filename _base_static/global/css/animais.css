@@ -1,21 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=M+PLUS+Rounded+1c&family=Varela+Round&display=swap');
 
-:root {
-    --bg-primary-color: #7291CA;
-    --bg-header-color: #4D6FAD;
-    --bg-banner-button-color: #F0AC03;
-    --bg-banner-button-hover-color: #dfa615;
-    --bg-filter-color: #FAFAFA;
-    --bg-filter-border-color: #CECECE;
-    --bg-filter-checkbox-color: #F7F7F7;
-    --bg-card-color: #F6F6F6;
-    --font-primary-color: #FAFAFA;
-    --font-secondary-color: #7291CA;
-    --font-dark-color: #000;
-    --font-light-color: #919191;
-    --font-filter-checkbox-color: #5C5C5C;
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -30,7 +14,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 30px;
+    gap: 50px;
     margin: 100px 0px;
 }
 
@@ -50,7 +34,8 @@
 .animal {
     display: flex;
     flex-direction: column;
-    background: #F6F6F6;
+    background: var(--bg-card-color);
+    box-shadow: -2px 2px 5px rgba(0, 0, 0, .2);
     padding: 10px;
     border-radius: 20px;
     transition: transform 0.3s ease;

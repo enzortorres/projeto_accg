@@ -122,6 +122,7 @@ class AnimalAdmin(admin.ModelAdmin):
     form               = AnimalAdminForm
     list_display       = ('id', 'nome', 'sexo', 'porte', 'tipo','foto_admin', 'idade', 'disponivel')
     list_display_links = ('id', 'nome',)
+    search_fields       = ('id', 'nome',)
     list_filter        = ('disponivel', 'tipo', 'sexo', 'porte', IdadeFilter,)
     list_per_page      = 10
     list_max_show_all  = 30
