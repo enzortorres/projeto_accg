@@ -9,7 +9,11 @@
     <main class="main">
         <div class="card-container">
             <div class="card-header">
-                <img src="{% static 'global/src/icons/doginfoicon.png' %}" alt="" class="tipo-icon">
+                {% if animal.tipo == 'cachorro' %}
+                    <img src="{% static 'global/src/icons/doginfoicon.png' %}" alt="" class="tipo-icon">
+                {% else %}
+                    <img src="{% static 'global/src/icons/catinfoicon.png' %}" alt="" class="tipo-icon">
+                {% endif %}
                 <img src="{% static 'global/src/icons/infoicon.png' %}" alt="" class="info-icon">
             </div>
             <div class="card-main">
@@ -33,27 +37,44 @@
                     <div class="card-animal-infos">
                         <div class="card-info-wrapper sexo">
                             <h4 class="card-animal-info-title">sexo</h4>
-                            <img src="{% static 'global/src/icons/male-50.png' %}" alt="" class="card-info-icons">
+                            {% if animal.sexo == 'macho' %}
+                                <img src="{% static 'global/src/icons/male-50.png' %}" alt=""   class="card-info-icons">  
+                            {% else %}
+                                <img src="{% static 'global/src/icons/female-50.png' %}" alt=""   class="card-info-icons">  
+                            {% endif %}
                         </div>
                         <div class="card-info-wrapper tipo">
                             <h4 class="card-animal-info-title">tipo</h4>
-                            <img src="{% static 'global/src/icons/tipocachorro.png' %}" alt="" class="card-info-icons">
+                            {% if animal.tipo == 'cachorro' %}
+                                <img src="{% static 'global/src/icons/tipocachorro.png' %}" alt="" class="card-info-icons">
+                            {% else %}
+                                <img src="{% static 'global/src/icons/tipogato.png' %}" alt="" class="card-info-icons">
+                            {% endif %}
                         </div>
                         <div class="card-info-wrapper porte">
                             <h4 class="card-animal-info-title">porte</h4>
-                            <img src="{% static 'global/src/icons/dog-portepequeno.png' %}" alt="" class="card-info-icons">
+                            {% if animal.porte == 'pequeno' %}
+                                <img src="{% static 'global/src/icons/dog-portepequeno.png' %}" alt="" class="card-info-icons">
+                            {% elif animal.porte == 'medio' %}
+                                <img src="{% static 'global/src/icons/dog-portemedio.png' %}" alt="" class="card-info-icons">
+                            {% else %}
+                                <img src="{% static 'global/src/icons/dog-portegrande.png' %}" alt="" class="card-info-icons">
+                            {% endif %}
                         </div>
                         <div class="card-info-wrapper idade">
                             <h4 class="card-animal-info-title">idade</h4>
-                            <p class="card-info-idade">{{ animal.idade }}</p>
+                            <p class="card-info-idade" id="idade-formatada">{{ animal.idade }}</p>
                         </div>
                     </div>
-                    <h4 class="card-animal-info-title">sobre mim</h4>
-                    <p class="card-animal-desc">{{ animal.descricao }}</p>
+                    <div class="card-animal-desc-wrapper">
+                        <h4 class="card-animal-info-title">sobre mim</h4>
+                        <p class="card-animal-desc">{{ animal.descricao }}</p>
+                    </div>
                 </div>
             </div>
         </div>
     </main>
 
-    <script src="{% static "global/js/unique-animal-image.js" %}"></script>
+    <script src="{% static 'global/js/unique-animal-image.js' %}"></script>
+    <script src="{% static 'global/js/format-idade-card.js' %}"></script>
 {% endblock content %}

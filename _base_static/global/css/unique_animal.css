@@ -21,6 +21,7 @@
     --font-dark-color: #000;
     --font-light-color: #919191;
     --font-filter-checkbox-color: #5C5C5C;
+    --font-family-infos: "Montserrat", sans-serif;
 }
 
 * {
@@ -36,7 +37,7 @@
     align-items: center;
     background-color: var(--bg-body-color);
     width: 100dvw;
-    height: calc(375px + 246px);
+    padding: 109.5px 0;
 }
 
 .card-container {
@@ -45,6 +46,7 @@
     background-color: #F6F6F6;
     box-shadow: inset 0px 0px 5px rgba(0, 0, 0, .3) ,8px 8px 10px rgba(0, 0, 0, .5);
     box-sizing: border-box;
+    font-family: var(--font-family-infos);
 }
 
 .card-header {
@@ -54,6 +56,7 @@
     background-color: var(--bg-primary-color);
     border-radius: 10px 10px 0px 0px;
     overflow: hidden;
+    user-select: none;
 }
 
 .info-icon,
@@ -106,7 +109,7 @@
 .main-image {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     display: block;
 }
 
@@ -124,6 +127,12 @@
 .thumbnail {
     width: 50px;
     height: 50px;
+    border-radius: 5px;
+}
+
+.active-thumbnail {
+    border: 2px solid #fff;
+    filter: brightness(0.6);
 }
 
 .linha {
@@ -146,6 +155,7 @@
 }
 
 .card-info-wrapper {
+    width: 60px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -153,6 +163,8 @@
 }
 
 .card-animal-info-title {
+    font-size: 20px;
+    font-weight: 400;
     color: #5C5C5C;
 }
 
@@ -163,12 +175,49 @@
 }
 
 .card-info-idade {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     height: 50px;
-    width: 50px;
-    max-width: 50px;
+    width: 65px;
+    max-width: 65px;
+}
+
+.idade-anos {
+    font-weight: bold;
+    color: #333;
+}
+
+.idade-meses {
+    font-size: 12px;
+    font-weight: normal;
+    color: #666;
+}
+
+.card-animal-desc-wrapper {
+    display: flex;
+    flex-direction: column;
 }
 
 .card-animal-desc {
+    font-size: 14px;
     max-width: 250px;
     color: #5C5C5C;
+}
+
+@media (max-width: 700px) {
+    .card-container {
+        width: 300px;
+    }
+
+    .card-main {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .linha {
+        width: 280px;
+        height: 3px;
+    }
 }
