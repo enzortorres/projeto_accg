@@ -10,6 +10,14 @@
     font-family: "M PLUS Rounded 1c", sans-serif;
 }
 
+.container-first{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: 350px;
+}
+
 .conteudo {
     display: flex;
     flex-direction: column;
@@ -63,7 +71,7 @@
 
 
 
-.banner2 {
+/*.banner2 {
     display: flex;
     width: 100%;
     height: 500px; 
@@ -119,7 +127,7 @@
     font-size: 1em;
     color: rgb(34, 33, 33);
     margin-left: 5px;
-}
+}*/
 
 .main-btn {
     width: 200px;
@@ -136,6 +144,42 @@
 
 .main-btn:hover {
     background-color: var(--bg-banner-button-hover-color); 
+}
+
+.container-square{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: 400px;
+}
+
+.square{
+    display: flex;
+    margin-bottom: 100px;
+    width: 500px;
+    height: 270px;
+    border-radius: 50px;
+    box-shadow: -1px 2px 4px 0px rgba(92, 92, 92, 0.136),
+    1px -2px 4px 0px rgba(232, 232, 232, 0.392);
+    transform: scale(1);
+    transition: all 1s;
+}
+
+.square:hover{
+    transform: scale(1.01);
+    box-shadow: -15px 18px 23px 5px rgba(92, 92, 92, 0.136),
+    16px -20px 13px 5px rgba(232, 232, 232, 0.392);
+}
+
+.textsquare{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 500px;
+    color: rgb(14, 14, 14);
+    text-align: left; 
+    padding: 20px 40px 20px 30px; 
 }
 
 @media (max-width: 768px) {
