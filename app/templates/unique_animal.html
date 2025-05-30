@@ -7,32 +7,50 @@
 
 {% block content %}
     <main class="main">
-        <div class="animal-card">
-            <div class="left-column">
-                <img id="active-image" src="{{ fotos.0.imagem.url }}" alt="Imagem principal do animal" class="main-image">
-                <div class="thumbnail-container">
-                    {% for foto in fotos %}
-                        <img 
-                            src="{{ foto.imagem.url }}" 
-                            alt="Miniatura" 
-                            class="thumbnail {% if forloop.first %}active-thumbnail{% endif %}" 
-                            onclick="setActiveImage(this)">
-                    {% endfor %}
-                </div>
+        <div class="card-container">
+            <div class="card-header">
+                <img src="{% static 'global/src/icons/doginfoicon.png' %}" alt="" class="tipo-icon">
+                <img src="{% static 'global/src/icons/infoicon.png' %}" alt="" class="info-icon">
             </div>
-            <div class="right-column">
-                <h2>{{ animal.nome }}</h2>
-                <div class="animal-sexo">
-                    {% if animal.sexo == 'macho' %}
-                        <p><img src="{% static 'global/src/icons/male.png' %}" class="sexo-icon"> {{ animal.get_sexo_display }}</p>
-                    {% else %}
-                        <p><img src="{% static 'global/src/icons/female.png' %}" class="sexo-icon"> {{ animal.get_sexo_display }}</p>
-                    {% endif %}
+            <div class="card-main">
+                <div class="left-column">
+                    <div class="main-image-wrapper">
+                        <img id="active-image" src="{{ fotos.0.imagem.url }}" alt="Imagem principal do animal" class="main-image">
+                    </div>
+                    <div class="thumbnail-container">
+                        {% for foto in fotos %}
+                            <img
+                                src="{{ foto.imagem.url }}"
+                                alt="Miniatura"
+                                class="thumbnail {% if forloop.first %}active-thumbnail{% endif %}"
+                                onclick="setActiveImage(this)">
+                        {% endfor %}
+                    </div>
                 </div>
-                <p>{{ animal.get_tipo_display }}</p>
-                <p>Porte {{ animal.get_porte_display|lower }}</p>
-                <p>{{ animal.idade }}</p>
-                <p>{{ animal.descricao }}</p>
+                <div class="linha"></div>
+                <div class="right-column">
+                    <h1>{{ animal.nome }}</h1>
+                    <div class="card-animal-infos">
+                        <div class="card-info-wrapper sexo">
+                            <h4 class="card-animal-info-title">sexo</h4>
+                            <img src="{% static 'global/src/icons/male-50.png' %}" alt="" class="card-info-icons">
+                        </div>
+                        <div class="card-info-wrapper tipo">
+                            <h4 class="card-animal-info-title">tipo</h4>
+                            <img src="{% static 'global/src/icons/tipocachorro.png' %}" alt="" class="card-info-icons">
+                        </div>
+                        <div class="card-info-wrapper porte">
+                            <h4 class="card-animal-info-title">porte</h4>
+                            <img src="{% static 'global/src/icons/dog-portepequeno.png' %}" alt="" class="card-info-icons">
+                        </div>
+                        <div class="card-info-wrapper idade">
+                            <h4 class="card-animal-info-title">idade</h4>
+                            <p class="card-info-idade">{{ animal.idade }}</p>
+                        </div>
+                    </div>
+                    <h4 class="card-animal-info-title">sobre mim</h4>
+                    <p class="card-animal-desc">{{ animal.descricao }}</p>
+                </div>
             </div>
         </div>
     </main>
