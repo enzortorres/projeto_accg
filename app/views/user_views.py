@@ -115,7 +115,7 @@ def animal(request, animal_id):
         disponivel=True,
     )
 
-    fotos = single_animal.fotos.all()
+    fotos = single_animal.fotos.all() #type:ignore
 
     context = {
         'animal': single_animal,
@@ -128,7 +128,7 @@ def sobre(request):
     context = {
         'banner_title': 'Conheça a ONG',
         'banner_subtitle': 'Nossa história até agora...',
-        'banner_imagem': 'global/src/images/banner-sobre-nos.png',
+        'banner_imagem': 'global/src/images/animalsobre.png',
     }
     return render(request, 'sobre.html',context=context)
 
