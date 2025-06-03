@@ -5,6 +5,7 @@
     flex-flow: row wrap;
     padding: 50px 0px 50px 140px;
     gap: 70px;
+    font-family: "M PLUS Rounded 1c";
 }
 
 @media (max-width:890px) {

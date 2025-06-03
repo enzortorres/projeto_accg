@@ -2,6 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap');
 
+.main-adotar {
+  padding: 20px;
+}
+
 .timeline {
   position: relative;
   max-width: 1000px;
@@ -15,7 +19,7 @@
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 6px;
+  width: 4px;
   height: 100%;
   background-color: #7f8b99;
   z-index: 0;
@@ -38,10 +42,10 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
   background-color: white;
-  box-shadow: 0 0 0 5px #7f8b99;
+  box-shadow: 0 0 0 4px #7f8b99;
   border-radius: 50%;
   z-index: 2;
 }
