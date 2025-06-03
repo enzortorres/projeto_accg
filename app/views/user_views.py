@@ -39,7 +39,7 @@ def apadrinhamento(request):
     context = {
         'banner_title': 'Apadrinhar',
         'banner_subtitle': 'Com um gesto simples, você transforma vidas.',
-        'banner_imagem': 'global/src/images/banner-apadrinhar.png',
+        'banner_imagem': 'global/src/images/apadrinharanimal.png',
     }
     
     return render(request, 'apadrinhamento.html', context=context)
