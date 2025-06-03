@@ -7,21 +7,21 @@
 {% block content %}
     <section class="section_inicio_home">
         <div class="container_informacoes">
-            <div class="elementos_informacoes accg">
+            <a class="elementos_informacoes accg" href="{% url "app:sobre" %}">
                 <img src="{% static 'global/src/images/image_ACCG.png' %}">
                 <h1>ACCG</h1>
                 <p>Quem somos nós</p>
-            </div>
-            <div class="elementos_informacoes animais">
+            </a>
+            <a class="elementos_informacoes animais" href="{% url "app:animais" %}">
                 <img src="{% static 'global/src/images/animais_section.png' %}">
                 <h1>ANIMAIS</h1>
                 <p>Cães e gatos</p>
-            </div>
-            <div class="elementos_informacoes adotar">
+            </a>
+            <a class="elementos_informacoes adotar" href="{% url "app:adotar" %}">
                 <img src="{% static 'global/src/images/pet_section.png' %}">
                 <h1>QUERO ADOTAR</h1>
                 <p>Escolha o seu pet</p>
-            </div>
+            </a>
         </div>
     </section>
 

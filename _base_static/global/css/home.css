@@ -26,6 +26,8 @@
     flex-direction: column;
     width: 220px;
     height: 250px;
+    text-decoration: none;
+    color: black;
 }
 
 .elementos_informacoes h1 {
