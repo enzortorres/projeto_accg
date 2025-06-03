@@ -8,6 +8,10 @@ from .models import Animal
 from django.contrib.admin.models import LogEntry
 from django.forms.widgets import CheckboxInput
 from django.utils.safestring import mark_safe
+from django.forms.models import BaseInlineFormSet
+from django.core.exceptions import ValidationError
+from django.contrib import messages
+
 
 original_each_context = admin.site.each_context
 
@@ -110,9 +114,21 @@ class AnimalAdminForm(forms.ModelForm):
             instance.save()
         return instance
 
+
+class AnimalFotoInlineFormSet(BaseInlineFormSet):
+    def clean(self):
+        super().clean()
+        tem_foto = any(
+            not form.cleaned_data.get('DELETE', False) and form.cleaned_data.get('imagem')
+            for form in self.forms if form.cleaned_data
+        )
+        if not tem_foto:
+            raise ValidationError("É obrigatório adicionar pelo menos uma foto do animal.") 
+
 class AnimalFotoInline(admin.TabularInline):
     model = models.AnimalFoto
     extra = 1
+    formset = AnimalFotoInlineFormSet
 
 class ResultadoTesteInline(admin.TabularInline):
     model = models.ResultadoTeste
@@ -151,6 +167,8 @@ class AnimalAdmin(admin.ModelAdmin):
         return "-"
     foto_admin.short_description = 'Foto'
     foto_admin.admin_order_field = 'fotos__imagem'  # permite ordenar por imagem
+
+
 
 class LogEntryAdmin(admin.ModelAdmin):
     list_display = ['action_time', 'user', 'content_type', 'object_repr', 'action_flag']
