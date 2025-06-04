@@ -116,10 +116,12 @@ def animal(request, animal_id):
     )
 
     fotos = single_animal.fotos.all() #type:ignore
-
+    testes = single_animal.testes.all()
+    
     context = {
         'animal': single_animal,
         'fotos': fotos,
+        'testes': testes,
     }
 
     return render(request, 'unique_animal.html', context)

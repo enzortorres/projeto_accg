@@ -79,7 +79,7 @@
 .card-main {
     display: flex;
     flex-direction: row;
-    padding: 15px 20px 25px 15px;
+    padding: 15px 20px 10px 15px;
     gap: 30px;
 }
 
@@ -128,6 +128,7 @@
     width: 50px;
     height: 50px;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .active-thumbnail {
@@ -139,7 +140,7 @@
     width: 3px;
     height: 300px;
     border-radius: 50%;
-    background-color: rgba(90, 90, 90, 0.297);
+    background-color: rgba(90, 90, 90, 0.3);
     margin: auto 0;
 }
 
@@ -204,6 +205,22 @@
     font-size: 14px;
     max-width: 250px;
     color: #5C5C5C;
+}
+
+.card-animal-testes {
+    display: flex;
+    justify-content: space-between;
+    color: #5C5C5C;
+    margin: 4px 0;
+    font-size: 13px;
+}
+
+.card-animal-testes .doenca {
+    text-align: left;
+}
+
+.card-animal-testes .resultado {
+    text-align: right;
 }
 
 @media (max-width: 700px) {

@@ -54,11 +54,23 @@
                         <div class="card-info-wrapper porte">
                             <h4 class="card-animal-info-title">porte</h4>
                             {% if animal.porte == 'pequeno' %}
-                                <img src="{% static 'global/src/icons/dog-portepequeno.png' %}" alt="" class="card-info-icons">
+                                {% if animal.tipo == 'cachorro' %}
+                                    <img src="{% static 'global/src/icons/dog-portepequeno.png' %}" alt="" class="card-info-icons">
+                                {% else %}
+                                    <img src="{% static 'global/src/icons/cat-portepequeno.png' %}" alt="" class="card-info-icons">
+                                {% endif %}
                             {% elif animal.porte == 'medio' %}
-                                <img src="{% static 'global/src/icons/dog-portemedio.png' %}" alt="" class="card-info-icons">
+                                {% if animal.tipo == 'cachorro' %}
+                                    <img src="{% static 'global/src/icons/dog-portemedio.png' %}" alt="" class="card-info-icons">
+                                {% else %}
+                                    <img src="{% static 'global/src/icons/cat-portemedio.png' %}" alt="" class="card-info-icons">
+                                {% endif %}
                             {% else %}
-                                <img src="{% static 'global/src/icons/dog-portegrande.png' %}" alt="" class="card-info-icons">
+                                {% if animal.tipo == 'cachorro' %}
+                                    <img src="{% static 'global/src/icons/dog-portegrande.png' %}" alt="" class="card-info-icons">
+                                {% else %}
+                                    <img src="{% static 'global/src/icons/cat-portegrande.png' %}" alt="" class="card-info-icons">
+                                {% endif %}
                             {% endif %}
                         </div>
                         <div class="card-info-wrapper idade">
@@ -70,8 +82,26 @@
                         <h4 class="card-animal-info-title">sobre mim</h4>
                         <p class="card-animal-desc">{{ animal.descricao }}</p>
                     </div>
+                    <div class="card-testes-main">
+                        <h4 class="card-animal-info-title">testes</h4>
+                        {% if testes %}
+                            <div class="card-testes">
+                                {% for teste in testes %}
+                                    <p class="card-animal-testes">
+                                        <span class="doenca">{{ teste.nome_teste }}</span>
+                                        <span class="resultado">{{ teste.resultado }}</span>
+                                    </p>
+                                {% endfor %}
+                            </div>
+                            {% else %}
+                            <p class="card-animal-testes">
+                                Nenhum teste realizado
+                            </p>
+                            {% endif %}
+                    </div>
                 </div>
             </div>
+            
         </div>
     </main>
 
