@@ -97,3 +97,28 @@
   order: 2;
   text-align: left;
 }
+
+@media(max-width:610px){
+  .timeline-content{
+    width: 90%;
+  }
+  .timeline-image{
+    display: none;
+  }
+  .timeline-event2{
+    justify-content: end;
+  }
+  .timeline-event{
+    justify-content: end;
+  } 
+  .left{
+    text-align: left;
+  }
+  .timeline::before{
+    left:20px;
+  }
+  .timeline-event::after,
+  .timeline-event2::after {
+    left:0;
+  }
+}
