@@ -1,0 +1,156 @@
+
+
+.main {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 50px 0px 50px 140px;
+    gap: 70px;
+    font-family: "M PLUS Rounded 1c";
+}
+
+@media (max-width:890px) {
+    .main {
+        justify-content: center;
+        padding: 50px 10px;
+    }
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    font-weight: 900;
+    gap: 10px;
+}
+
+.icon-pata {
+    width: 32px;
+    height: 32px;
+}
+
+.doacao {
+    display: flex;
+    flex-flow: column wrap;
+    gap: 30px;
+}
+
+.content {
+    display: flex;
+    flex-flow: column wrap;
+    padding: 0px 20px;
+    gap: 20px;
+    height: fit-content;
+}
+
+.content p {
+    max-width: 400px;
+}
+
+.doacao:last-of-type .content p {
+    max-width: 630px;
+}
+
+.dinheiro {
+    display: flex;
+    height: 350px;
+    gap: 50px;
+}
+
+.qrcode-picpay {
+    height: 100%;
+    width: 250px;
+}
+
+.linha {
+    background-color: #000;
+}
+
+.pontos-coleta {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.h4-pontos-coleta {
+    font-size: 20px;
+}
+
+.btn-pontos-coleta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 40px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: var(--bg-primary-color);
+    color: var(--font-primary-color);
+    text-decoration: none;
+    border-radius: 20px;
+}
+
+@media (max-width:800px) {
+    .qrcode-picpay {
+        width: 200px;
+        height: 90%;
+    }
+}
+
+@media (min-width: 656px) {
+    .linha {
+        width: 2px;
+        height: 100%;
+    }
+}
+
+@media (max-width: 655px) {
+    .dinheiro {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        height: auto;
+    }
+
+    .qrcode-picpay {
+        width: 100%;
+        height: auto;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .linha {
+        width: 100%;
+        height: 2px;
+        margin: 20px 0;
+    }
+
+    .dados-bancos {
+        padding: 0 10px;
+    }
+
+    .pagseguro, .banco-do-brasil {
+        margin-bottom: 20px;
+    }
+}
+
+.dados-bancos {
+    display: flex;
+    flex-flow: column wrap;
+    gap: 20px;
+}
+
+.dados-bancos h3 {
+    font-weight: 600;
+}
+
+.dados-bancos p {
+    font-weight: 500;
+}
+
+.lista-produtos {
+    margin-left: 20px;
+}
+
+.lista-produtos li {
+    list-style: disc;
+}
