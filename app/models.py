@@ -1,10 +1,6 @@
 from django.db import models
 from datetime import date
 
-def caminho_foto(instance, filename):
-    tipo = instance.animal.tipo
-    return f'fotos_animais/{tipo}/{filename}'
-
 class Animal(models.Model):
     class Meta:
         verbose_name        = 'Animal'
@@ -65,7 +61,7 @@ class AnimalFoto(models.Model):
         db_table            = '"animal_foto"'
     
     animal = models.ForeignKey(Animal, on_delete=models.CASCADE, related_name='fotos')
-    imagem = models.ImageField(upload_to=caminho_foto)
+    imagem = models.ImageField(upload_to='fotos_animais/')
     
     def __str__(self):
         return f"Foto {self.animal.nome}"
