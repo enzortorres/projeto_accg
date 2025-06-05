@@ -11,6 +11,9 @@
 }
 
 .main-adotar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
     padding: 30px 0;
 }
 
@@ -26,13 +29,15 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
-    padding: 0 80px;
     line-height: 1.7;
     font-size: 1.1rem;
-    text-align: center;
     font-weight: 500;
-    
 }
+
+/* .forms-links {
+    display: flex;
+    gap: 10px;
+} */
 
 .conteudo h2 {
     font-size: 2.5rem;
@@ -47,9 +52,6 @@
 
 .conteudo p{
     display: flex;
-    margin-bottom:20px ;
-    margin-left: 20px;
-    margin-top: 10px;
     color: rgb(34, 33, 33);
 
 }
@@ -100,16 +102,14 @@
     width: 500px;
     height: 270px;
     border-radius: 50px;
-    box-shadow: -1px 2px 4px 0px rgba(92, 92, 92, 0.136),
-    1px -2px 4px 0px rgba(232, 232, 232, 0.392);
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.4);
     transform: scale(1);
+    background-color: var(--bg-primary-color);
     transition: all 1s;
 }
 
 .square:hover{
     transform: scale(1.01);
-    box-shadow: -15px 18px 23px 5px rgba(92, 92, 92, 0.136),
-    16px -20px 13px 5px rgba(232, 232, 232, 0.392);
 }
 
 .textsquare{
@@ -119,6 +119,7 @@
     max-width: 500px;
     text-align: left; 
     padding: 20px 40px 20px 30px; 
+    color: var(--font-primary-color);
 }
 
 @media (max-width: 768px) {
@@ -129,7 +130,6 @@
 
     .conteudo h2 {
         font-size: 2rem;
-        text-align: center;
     }
 
     .conteudo p,
@@ -137,7 +137,6 @@
         font-size: 0.95rem;
         margin-left: 0;
         justify-content: center;
-        text-align: center;
     }
 
     .banner2 {
@@ -160,7 +159,6 @@
 
     .banner2-text {
         align-items: center;
-        text-align: center;
         padding: 20px;
     }
 

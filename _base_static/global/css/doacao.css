@@ -15,7 +15,6 @@
     }
 }
 
-
 .title {
     display: flex;
     align-items: center;
@@ -63,6 +62,31 @@
 
 .linha {
     background-color: #000;
+}
+
+.pontos-coleta {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.h4-pontos-coleta {
+    font-size: 20px;
+}
+
+.btn-pontos-coleta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 40px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: var(--bg-primary-color);
+    color: var(--font-primary-color);
+    text-decoration: none;
+    border-radius: 20px;
 }
 
 @media (max-width:800px) {

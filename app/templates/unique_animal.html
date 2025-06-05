@@ -55,21 +55,21 @@
                             <h4 class="card-animal-info-title">porte</h4>
                             {% if animal.porte == 'pequeno' %}
                                 {% if animal.tipo == 'cachorro' %}
-                                    <img src="{% static 'global/src/icons/dog-portepequeno.png' %}" alt="" class="card-info-icons">
+                                    <img src="{% static 'global/src/icons/dog-portepequeno.png' %}" alt="" class="card-info-icons porte-icon">
                                 {% else %}
-                                    <img src="{% static 'global/src/icons/cat-portepequeno.png' %}" alt="" class="card-info-icons">
+                                    <img src="{% static 'global/src/icons/cat-portepequeno.png' %}" alt="" class="card-info-icons porte-icon">
                                 {% endif %}
                             {% elif animal.porte == 'medio' %}
                                 {% if animal.tipo == 'cachorro' %}
-                                    <img src="{% static 'global/src/icons/dog-portemedio.png' %}" alt="" class="card-info-icons">
+                                    <img src="{% static 'global/src/icons/dog-portemedio.png' %}" alt="" class="card-info-icons porte-icon">
                                 {% else %}
-                                    <img src="{% static 'global/src/icons/cat-portemedio.png' %}" alt="" class="card-info-icons">
+                                    <img src="{% static 'global/src/icons/cat-portemedio.png' %}" alt="" class="card-info-icons porte-icon">
                                 {% endif %}
                             {% else %}
                                 {% if animal.tipo == 'cachorro' %}
-                                    <img src="{% static 'global/src/icons/dog-portegrande.png' %}" alt="" class="card-info-icons">
+                                    <img src="{% static 'global/src/icons/dog-portegrande.png' %}" alt="" class="card-info-icons porte-icon">
                                 {% else %}
-                                    <img src="{% static 'global/src/icons/cat-portegrande.png' %}" alt="" class="card-info-icons">
+                                    <img src="{% static 'global/src/icons/cat-portegrande.png' %}" alt="" class="card-info-icons porte-icon">
                                 {% endif %}
                             {% endif %}
                         </div>
