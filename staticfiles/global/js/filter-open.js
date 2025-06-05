@@ -11,7 +11,7 @@ function openFilter() {
 }
 
 function closeFilter() {
-    filter.style.right = "-400px";
+    filter.style.right = "-450px";
     overlay_filter.style.display = 'none';
     isOpen = false;
 }
