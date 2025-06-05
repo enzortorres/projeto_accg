@@ -703,6 +703,7 @@ ul.messagelist li.error {
     background-color: var(--body-bg);
     background-position: 5px 12px;
     overflow-wrap: break-word;
+    max-width: 350px;
 }
 
 ul.errorlist {
