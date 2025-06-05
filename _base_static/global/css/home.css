@@ -237,11 +237,16 @@
     padding-left: 15px;
 }
 
+
 .resposta p {
     line-height: 1.6;
     font-size: 1rem;
     color: #7D7D7D;
     padding-bottom: 1rem;
+}
+
+.resposta p a {
+    color: #000;
 }
 
 .faq.active .resposta {
@@ -272,6 +277,10 @@ svg {
 @media(max-width:397px){
     .title_faq{
         font-size: 1.5rem;
+    }
+
+    .resposta p {
+        max-width: 245px;
     }
 }
 
