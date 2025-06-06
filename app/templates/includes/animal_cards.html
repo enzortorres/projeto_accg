@@ -3,11 +3,9 @@
     {% for animal in page_obj %}
         <div class="animal">
             <a href="{% url "app:animal" animal.id %}" class="unique-animal-anchor">
-                {% with primeira_foto=animal.fotos.first %}
-                    {% if primeira_foto %}
-                        <img src="{{ primeira_foto.imagem.url }}" class="animal-foto">
-                    {% endif %}
-                {% endwith %}
+                {% if animal.fotos.all %}
+                    <img src="{{ animal.fotos.first.imagem.url }}" class="animal-foto">
+                {% endif %}
                 <h3 class="animal-nome">{{ animal.nome }}</h3>
                 <div class="animal-dados">
                     <div class="animal-porte">

@@ -45,9 +45,9 @@ class Command(BaseCommand):
                 while tentativas < 5:
                     try:
                         if tipo == 'cachorro':
-                            resp = requests.get('https://dog.ceo/api/breeds/image/random')
+                            resp = requests.get('https://api.thedogapi.com/v1/images/search')
                             resp.raise_for_status()
-                            url_imagem = resp.json()['message']
+                            url_imagem = resp.json()[0]['url']
                         else:
                             resp = requests.get('https://api.thecatapi.com/v1/images/search')
                             resp.raise_for_status()
