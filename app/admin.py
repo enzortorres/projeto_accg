@@ -10,7 +10,6 @@ from django.forms.widgets import CheckboxInput
 from django.utils.safestring import mark_safe
 from django.forms.models import BaseInlineFormSet
 from django.core.exceptions import ValidationError
-from django.contrib import messages
 
 
 original_each_context = admin.site.each_context

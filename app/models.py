@@ -1,6 +1,9 @@
 from django.db import models
 from datetime import date
-from cloudinary.models import CloudinaryField
+
+def caminho_foto(instance, filename):
+    tipo = instance.animal.tipo
+    return f'fotos_animais/{tipo}/{filename}'
 
 class Animal(models.Model):
     class Meta:
@@ -62,7 +65,7 @@ class AnimalFoto(models.Model):
         db_table            = '"animal_foto"'
     
     animal = models.ForeignKey(Animal, on_delete=models.CASCADE, related_name='fotos')
-    imagem = CloudinaryField('image')
+    imagem = models.ImageField(upload_to=caminho_foto)
     
     def __str__(self):
         return f"Foto {self.animal.nome}"
