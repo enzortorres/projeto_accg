@@ -33,14 +33,14 @@
                 </div>
                 <div class="linha"></div>
                 <div class="right-column">
-                    <h1>{{ animal.nome }}</h1>
+                    <h1 class="card-animal-name">{{ animal.nome }}</h1>
                     <div class="card-animal-infos">
                         <div class="card-info-wrapper sexo">
                             <h4 class="card-animal-info-title">sexo</h4>
                             {% if animal.sexo == 'macho' %}
-                                <img src="{% static 'global/src/icons/male-50.png' %}" alt=""   class="card-info-icons">  
+                                <img src="{% static 'global/src/icons/male-50.png' %}" alt=""   class="card-info-icons">
                             {% else %}
-                                <img src="{% static 'global/src/icons/female-50.png' %}" alt=""   class="card-info-icons">  
+                                <img src="{% static 'global/src/icons/female-50.png' %}" alt=""   class="card-info-icons">
                             {% endif %}
                         </div>
                         <div class="card-info-wrapper tipo">
@@ -101,7 +101,7 @@
                     </div>
                 </div>
             </div>
-            
+
         </div>
     </main>
 

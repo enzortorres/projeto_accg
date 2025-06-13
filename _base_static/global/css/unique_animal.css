@@ -1,6 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=M+PLUS+Rounded+1c&family=Varela+Round&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+@font-face {
+    font-family: 'SitturnAroundBark';
+    src: url('../src/fonts/SitturnAroundBark-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 :root {
     --bg-primary-color: #7291CA;
     --bg-header-color: #4D6FAD;
@@ -148,6 +155,11 @@
     display: flex;
     flex-direction: column;
     gap: 15px;
+}
+
+.card-animal-name {
+    font-family: 'SitturnAroundBark', sans-serif;
+    font-size: 40px;
 }
 
 .card-animal-infos {
