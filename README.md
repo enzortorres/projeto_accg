@@ -15,6 +15,7 @@ O objetivo principal é criar uma ferramenta digital que conecte animais abandon
 
 <ul>
     <li>📋 Lista de animais disponíveis para adoção com informações como nome, idade, raça e descrição.</li>
+    <li>👑 Sessão administrativa para a adição ou remoção de animais para a adoção</li>
     <li>🔍 Filtro de busca para facilitar a navegação entre os pets.</li>
     <li>🐶 Página individual de cada animal, com mais detalhes e fotos.</li>
     <li>📩 Formulário de contato/adote agora, que permite ao usuário demonstrar interesse na adoção.</li>
